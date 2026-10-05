@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: f826a2dc0842a2a4a94784d5da38841c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373950
+  packageName: Modular First Person Controller - Controlador Primera Persona Modular
+    - 48A 01
+  packageVersion: 1.0
+  assetPath: Assets/48A-01-FPC_CPP/English/FirstPersonController/02___FPC - ScriptableObjects/FPC
+    - SO.asset
+  uploadId: 941636

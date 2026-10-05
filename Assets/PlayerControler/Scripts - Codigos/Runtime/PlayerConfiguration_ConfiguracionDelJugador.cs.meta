@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 37542e5a7d825664581d1658c3455e01
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373950
+  packageName: Modular First Person Controller - Controlador Primera Persona Modular
+    - 48A 01
+  packageVersion: 1.0
+  assetPath: Assets/48A-01-FPC_CPP/Scripts - Codigos/Runtime/PlayerConfiguration_ConfiguracionDelJugador.cs
+  uploadId: 941636
