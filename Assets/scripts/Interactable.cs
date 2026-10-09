@@ -1,37 +1,42 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
-public class Interactable : MonoBehaviour
+
+public class Interactable : MonoBehaviour, IInteractable
 {
-    Outline outline;
-    public string message;
-    public UnityEvent onInteractation;
+    [SerializeField] protected Outline outline;
+    [SerializeField] private UnityEvent onInteract;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnEnable()
     {
-        outline = GetComponent<Outline>();
-        HideOutline();
+        if (outline == null)
+            outline = GetComponent<Outline>();
 
+        if (outline != null)
+            outline.enabled = false;
     }
 
     public void ShowOutline()
     {
+        if (outline == null)
+        {
+            Debug.LogWarning($"No Outline component assigned or found on {gameObject.name}");
+            return;
+        }
         outline.enabled = true;
     }
 
     public void HideOutline()
     {
-        outline.enabled = false;
+        if (outline != null)
+            outline.enabled = false;
     }
-    public void Interact()
+
+    public virtual void Interact()
     {
-        onInteractation.Invoke();
+        Debug.Log($"Interacted with: {gameObject.name}");
+        onInteract?.Invoke();
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    public bool IsInteractable => gameObject.activeSelf && enabled;
 }
