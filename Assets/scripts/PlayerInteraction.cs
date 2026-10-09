@@ -23,7 +23,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         RaycastHit hit;
 
-        // Use ScreenPointToRay for mouse-based raycasts (since you're using mouse clicks)
+        // Use ScreenPointToRay for mouse-based raycasts
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, playerReach))
