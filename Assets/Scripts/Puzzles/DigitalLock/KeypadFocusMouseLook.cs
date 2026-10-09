@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class KeypadFocusMouseLook : MonoBehaviour
@@ -9,20 +8,16 @@ public class KeypadFocusMouseLook : MonoBehaviour
     [SerializeField] private float maxPitch = 45f;
     [SerializeField] private float yawLimit = 45f;
 
+    private Quaternion initialLocalRotation;
     private float yaw;
     private float pitch;
-    private float initialYaw;
 
     private void OnEnable()
     {
-        Vector3 angles = transform.eulerAngles;
+        initialLocalRotation = transform.localRotation;
 
-        yaw = angles.y;
-        initialYaw = yaw;
-
-        pitch = angles.x;
-        if (pitch > 180f)
-            pitch -= 360f;
+        yaw = 0f;
+        pitch = 0f;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -30,15 +25,22 @@ public class KeypadFocusMouseLook : MonoBehaviour
 
     private void Update()
     {
-        yaw += Input.GetAxis("Mouse X") * sensitivity;
-        pitch -= Input.GetAxis("Mouse Y") * sensitivity;
+        float mouseX = Input.GetAxisRaw("Mouse X");
+        float mouseY = Input.GetAxisRaw("Mouse Y");
 
-        pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
+        yaw = Mathf.Clamp(
+            yaw + mouseX * sensitivity,
+            -yawLimit,
+            yawLimit
+        );
 
-        float minYaw = initialYaw - yawLimit;
-        float maxYaw = initialYaw + yawLimit;
-        yaw = Mathf.Clamp(yaw, minYaw, maxYaw);
+        pitch = Mathf.Clamp(
+            pitch - mouseY * sensitivity,
+            minPitch,
+            maxPitch
+        );
 
-        transform.rotation = Quaternion.Euler(pitch, yaw, 0f);
+        transform.localRotation =
+            initialLocalRotation * Quaternion.Euler(pitch, yaw, 0f);
     }
 }
