@@ -3,78 +3,69 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     public float playerReach = 3f;
-    Interactable currentInteractable;
-    // Update is called once per frame
+    IInteractable currentInteractable;
+
     void Update()
     {
         CheckInteraction();
-        if (Input.GetMouseButtonDown(0) && currentInteractable != null)
+        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
         {
-            if (currentInteractable != null)
-            {
-                currentInteractable.Interact();
-            }
+            Debug.Log($"E pressed, Calling Interact() on {currentInteractable}");
+            currentInteractable.Interact();
         }
-    
     }
-
 
     void CheckInteraction()
     {
-        RaycastHit hit;
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 
-        // Use ScreenPointToRay for mouse-based raycasts
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit, playerReach))
+        if (Physics.Raycast(ray, out RaycastHit hit, playerReach))
         {
-            if (hit.collider.CompareTag("interactable"))
+            Debug.Log($"Raycast hit: {hit.collider.name}");
+
+            IInteractable newInteractable = hit.collider.GetComponent<IInteractable>();
+
+            if (newInteractable != null)
             {
-                Interactable newInteractable = hit.collider.GetComponent<Interactable>();
+                Debug.Log($" Found IInteractable: {hit.collider.name}");
 
-                if (newInteractable != null)
+                if (currentInteractable != null && currentInteractable != newInteractable)
                 {
-                    if (currentInteractable != null && currentInteractable != newInteractable)
-                    {
-                        DisableIneractable(currentInteractable);
-                    }
-
-                    if (newInteractable.enabled)
-                    {
-                        SetNewCurrentInteractable(newInteractable);
-                    }
-                    else
-                    {
-                        DisableIneractable(currentInteractable);
-                    }
+                    Debug.Log($"Switching from {currentInteractable} to {newInteractable}");
+                    currentInteractable.HideOutline();
                 }
+
+                if (newInteractable.IsInteractable)
+                {
+                    SetNewCurrentInteractable(newInteractable);
+                }
+            }
+            else
+            {
+                Debug.Log($"No IInteractable found on {hit.collider.name}");
+                DisableInteractable(currentInteractable);
             }
         }
         else
         {
-            DisableIneractable(currentInteractable);
+            Debug.Log("Raycast didn't hit anything");
+            DisableInteractable(currentInteractable);
         }
     }
 
-
-    void SetNewCurrentInteractable(Interactable newInteractable)
+    void SetNewCurrentInteractable(IInteractable newInteractable)
     {
-        UI.instance.SetInteractionText("PickUp Money");
-
         currentInteractable = newInteractable;
         currentInteractable.ShowOutline();
-
-
-
+        Debug.Log($"Showing outline for {newInteractable}");
     }
 
-    void DisableIneractable(Interactable newInteractable)
+    void DisableInteractable(IInteractable interactable)
     {
-
-        UI.instance.ClearInteractionText();
-        if (newInteractable != null)
+        if (interactable != null)
         {
-            newInteractable.HideOutline();
+            interactable.HideOutline();
+            Debug.Log($"Hiding outline");
         }
         currentInteractable = null;
     }
