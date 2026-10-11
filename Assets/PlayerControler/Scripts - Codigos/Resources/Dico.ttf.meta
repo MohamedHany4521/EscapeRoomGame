@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 644cf483e2553e842b883ac627fa0eed
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Dico
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373950
+  packageName: Modular First Person Controller - Controlador Primera Persona Modular
+    - 48A 01
+  packageVersion: 1.0
+  assetPath: Assets/48A-01-FPC_CPP/Scripts - Codigos/Resources/Dico.ttf
+  uploadId: 941636

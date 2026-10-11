@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: fdd4329bb7335a74bb0f94f51d6ea5f3
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373950
+  packageName: Modular First Person Controller - Controlador Primera Persona Modular
+    - 48A 01
+  packageVersion: 1.0
+  assetPath: Assets/48A-01-FPC_CPP/English/FirstPersonController/01___Scenes/BI/FPC
+    - Test Scene - BI.unity
+  uploadId: 941636

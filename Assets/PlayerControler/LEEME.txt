@@ -1,0 +1,72 @@
+ES: 
+
+Bienvenido a mi primer Asset. Es algo muy sencillo, pero espero que sea de ayuda para todos los que lo usen.
+
+En la primera carpeta del Asset encontrarás directamente un prefab utilizable(Recuerda asignar las Layers en 
+"Capas Que Se Consideran Suelo" dentro de las Mecanicas Base, en el Modulo 04, deben coincidir con las Layers que 
+le asignas a tus suelos). 
+
+
+
+
+
+
+
+
+
+Aun así, te recomiendo encarecidamente que eches un ojo a la documentación, no a la técnica necesariamente, 
+sino a la de cómo utilizar el propio Asset
+(48A-01-FPC_CPP\Español\ControladorPrimeraPersona\04___Documentacion\CPP FPC_Como Usar_V1.0_ES).
+Igual verás que he hecho una escena de prueba y que, a la par, ya tienes 2 Configs listos para probar, como el de
+Arcade o el de "Terror" para mostrar el alcance de este Asset.
+
+
+Este es el primer Asset que publico, pero definitivamente es el menos ambicioso. Tengo otros 2, probablemente unas
+100 veces más grandes, en desarrollo, la razón de crear este no es tanto porque hicieran falta Assets
+del tipo FPC(CPP), ya que he visto igualmente otros gratuitos que están 48/10, sino que, para cuando logre terminar
+mis otros 2 proyectos y los publique, estés tú como público, más abierto a darme la confianza de
+comprarlos(Si te sirven, claro) al saber que lo que hago tiene detrás mucho trabajo duro y mucha dedicación.
+
+Como dato y como tal vez ya te imaginarás, estoy trabajando para que los otros 2 proyectos igual tengan una Window muy
+personalizada, mucho más que la que creé para este asset, para hacer que dichas herramientas no solo sean útiles
+por su funcionamiento técnico directo, sino también por su facilidad de manipulación.
+
+
+
+Por favor, cualquier cosa, ya sea si estás aprendiendo y necesitas una mano amiga u en general otra cosa, siéntete
+libre de mandarme un mensaje a "48assetsandgames@gmail.com".
+
+Igualmente si deseas solicitar que agregue/modifique alguna mecánica/variable al Asset, no dudes en mandarme correo,
+te recomiendo utilizar este formato:
+
+
+
+
+De: @Tu correo
+Para: 48assetsandgames@gmail.com
+
+Asunto: Idea de Adición al FPC-CPP
+
+Correo: Hola, buenas tardes, noté que a la Window le hacen falta variables para especificar por aparte
+la intensidad/frecuencia del headbob(Cabeceo) al estar agachado/acostado, siento que agregar eso sería una
+muy buena idea.
+
+
+
+
+Me tomaré muy en serio las recomendaciones pues mi idea es que el Asset crezca al doble de grande pero sin perder
+el rumbo del mismo. Paz, y ojalá te sea de utilidad.
+
+Bendiciones. :)
+
+
+
+
+(POR FAVOR NO renombres las carpetas "48A-01-FPC_CPP" ni "Configs", pues la Window las requiere así para poder 
+guardar/cargar/eliminar las configs que hagas o las que ya existen. Eso sí, SÍ puedes mover la carpeta entera a 
+donde te plazca, siempre y cuando esté dentro de Assets/ así que no lo muevas a Packages).
+
+
+
+
+
