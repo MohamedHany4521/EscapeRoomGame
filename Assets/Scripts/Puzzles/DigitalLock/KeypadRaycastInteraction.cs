@@ -16,11 +16,21 @@ public class KeypadRaycastInteraction : MonoBehaviour
             playerCamera = GetComponent<Camera>();
 
         if (playerCamera == null)
+            playerCamera = GetComponentInChildren<Camera>();
+
+        if (playerCamera == null)
+            playerCamera = Camera.main;
+
+        if (playerCamera == null)
             Debug.LogError("Player Camera is not assigned!", this);
     }
 
     private void Update()
     {
+        // Avoid duplicate raycasting and input handling when PlayerInteraction is active
+        if (FindFirstObjectByType<PlayerInteraction>() != null)
+            return;
+
         if (playerCamera == null || !playerCamera.enabled)
             return;
 

@@ -1,4 +1,4 @@
-%YAML 1.1
+﻿%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &4438347229734307821
 GameObject:
@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 7242984577539555430}
   - component: {fileID: 1742244925422127771}
   - component: {fileID: 2684508740913028420}
+  - component: {fileID: 8542194723019482103}
   m_Layer: 0
   m_Name: FPC - Player
   m_TagString: Untagged
@@ -232,8 +233,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 441c40f091780974ca700e55ad4f5194, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Configuration_Configuracion: {fileID: 11400000, guid: f826a2dc0842a2a4a94784d5da38841c, type: 2}
   CameraSupport_SoporteDeLaCamara: {fileID: 3013662159228220103}
   MainCamera_CamaraPrincipal: {fileID: 7389954052486598493}
@@ -306,3 +307,19 @@ Transform:
   - {fileID: 9156749835950088163}
   m_Father: {fileID: 10761291268658743}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8542194723019482103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975474905230341450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd5d43617e30f74b9b4de55eea071bf, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  playerCamera: {fileID: 7389954052486598493}
+  playerReach: 3.5
+  interactionKey: 101
+  allowMouseClick: 1

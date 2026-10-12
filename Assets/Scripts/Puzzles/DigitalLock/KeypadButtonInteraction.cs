@@ -19,11 +19,20 @@ public class KeypadButtonInteraction : MonoBehaviour, IInteractable
 
     [Header("Outline")]
     [SerializeField] private Outline outline;
+    [SerializeField] private Color outlineColor = Color.white;
+    [SerializeField] private float outlineWidth = 2f;
 
     private void Awake()
     {
         if (outline == null)
             outline = GetComponent<Outline>();
+
+        if (outline == null)
+        {
+            outline = gameObject.AddComponent<Outline>();
+            outline.OutlineColor = outlineColor;
+            outline.OutlineWidth = outlineWidth;
+        }
 
         if (outline != null)
             outline.enabled = false;

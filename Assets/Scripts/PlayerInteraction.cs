@@ -4,8 +4,9 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
-    [SerializeField, Min(0.1f)] private float playerReach = 3f;
+    [SerializeField, Min(0.1f)] private float playerReach = 3.5f;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
+    [SerializeField] private bool allowMouseClick = true;
 
     private IInteractable currentInteractable;
 
@@ -15,6 +16,12 @@ public class PlayerInteraction : MonoBehaviour
             playerCamera = GetComponentInChildren<Camera>();
 
         if (playerCamera == null)
+            playerCamera = GetComponent<Camera>();
+
+        if (playerCamera == null)
+            playerCamera = Camera.main;
+
+        if (playerCamera == null)
             Debug.LogError("PlayerInteraction: No player camera assigned or found.", this);
     }
 
@@ -22,7 +29,9 @@ public class PlayerInteraction : MonoBehaviour
     {
         CheckInteraction();
 
-        if (Input.GetKeyDown(interactionKey) &&
+        bool interactTriggered = Input.GetKeyDown(interactionKey) || (allowMouseClick && Input.GetMouseButtonDown(0));
+
+        if (interactTriggered &&
             currentInteractable != null &&
             currentInteractable.IsInteractable)
         {
