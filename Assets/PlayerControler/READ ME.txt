@@ -1,0 +1,57 @@
+EN:
+
+Welcome to my first Asset. It’s something very simple, but I hope it will be helpful to everyone who uses it.
+
+In the first folder of the Asset, you’ll find a directly usable prefab(Remember to assign the your Layers in 
+"Layers That Are Considered Ground" inside Base Mechanics on Module 04). 
+
+
+
+
+
+
+
+
+Even so, I strongly recommend that you take a look at the documentation, not necessarily the technical one, 
+but the one about how to use the Asset itself 
+(48A-01-FPC_CPP\English\FirstPersonController\04___Documentation\CPP FPC_How To_Use_V1.0_EN).
+You’ll also see that I made a test scene and that, at the same time, you already have 2 Configs ready to try, 
+such as the Arcade one or the "Terror" one, to show the scope of this Asset.
+
+This is the first Asset I publish, but it’s definitely the least ambitious. I have 2 others, probably around
+100 times bigger, in development. The reason for creating this is not so much because Assets of this type
+(FPC (CPP)) were needed, since I’ve also seen other free ones that are 48/10, but so that when I manage to finish
+my other 2 projects and publish them, you as the audience are more open to giving me your trust and buying 
+them (if they’re useful to you, of course), knowing that what I do has a lot of hard work and dedication behind it.
+
+As a side note, and as you may have already imagined, I’m working to ensure that the other 2 projects also have a 
+highly customized Window, much more than the one I created for this asset, to make those tools not only useful for 
+their direct technical functionality, but also for their ease of use.
+
+Please, if anything comes up, whether you're learning and need a helping hand or anything else in general, feel free
+to send me a message at "48assetsandgames@gmail.com
+".
+
+Likewise, if you would like to request that I add/modify any mechanic/variable in the Asset, don’t hesitate to email 
+me, I recommend using this format:
+
+From: @Your email
+To: 48assetsandgames@gmail.com
+
+Subject: Addition Idea for FPC-CPP
+
+Email: Hello, good afternoon, I noticed that the Window is missing variables to separately specify
+the intensity/frequency of the headbob while crouching/prone, I think adding that would be a
+very good idea.
+
+I will take the recommendations very seriously since my goal is for the Asset to grow to twice its size without 
+losing its direction. Peace, and I hope it is useful to you.
+
+Blessings. :)
+
+
+
+
+(PLEASE DO NOT rename the folders "48A-01-FPC_CPP" or "Configs", as the Window requires them as-is in order 
+to save/load/delete the configs you create or that already exist. That said, YOU CAN move the entire folder 
+wherever you like, as long as it stays inside Assets/ so do not move it to Packages).

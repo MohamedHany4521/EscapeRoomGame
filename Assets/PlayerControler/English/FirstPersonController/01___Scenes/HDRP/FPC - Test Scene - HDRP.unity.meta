@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8b2f3b7fb5cb7584e8ed207eddbea0d5
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 373950
+  packageName: Modular First Person Controller - Controlador Primera Persona Modular
+    - 48A 01
+  packageVersion: 1.0
+  assetPath: Assets/48A-01-FPC_CPP/English/FirstPersonController/01___Scenes/HDRP/FPC
+    - Test Scene - HDRP.unity
+  uploadId: 941636
