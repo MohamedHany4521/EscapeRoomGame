@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class KeypadButtonInteraction : MonoBehaviour, IInteractable
+public class KeypadButtonInteraction : MonoBehaviour, IInteractable, IPuzzleClickable
 {
     public enum ButtonType
     {
@@ -42,17 +42,44 @@ public class KeypadButtonInteraction : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        // If part of a puzzle with PuzzleInteractable and player is not already in focus mode,
+        // forward the first-person interaction (E key) to the puzzle focus system.
+        PuzzleInteractable puzzle = GetComponentInParent<PuzzleInteractable>();
+        if (puzzle != null && puzzle.IsInteractable && PuzzleFocusController.Instance != null && !PuzzleFocusController.Instance.IsFocused)
+        {
+            puzzle.Interact();
+            return;
+        }
+
+        Press();
+    }
+
+    public void OnPuzzleClick()
+    {
         Press();
     }
 
     public void ShowOutline()
     {
+        PuzzleInteractable puzzle = GetComponentInParent<PuzzleInteractable>();
+        if (puzzle != null && puzzle.IsInteractable && PuzzleFocusController.Instance != null && !PuzzleFocusController.Instance.IsFocused)
+        {
+            puzzle.ShowOutline();
+            return;
+        }
+
         if (outline != null)
             outline.enabled = true;
     }
 
     public void HideOutline()
     {
+        PuzzleInteractable puzzle = GetComponentInParent<PuzzleInteractable>();
+        if (puzzle != null)
+        {
+            puzzle.HideOutline();
+        }
+
         if (outline != null)
             outline.enabled = false;
     }
