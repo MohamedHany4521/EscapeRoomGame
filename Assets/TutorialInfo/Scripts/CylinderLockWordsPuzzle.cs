@@ -17,14 +17,20 @@ public class CylinderLockWordsPuzzle : MonoBehaviour
 
     private bool _puzzleStarts;
     private float _rotationSpeed = 45f;
-    private int _letterDial01Step = 0;
     private int _currentLetterDial = 0;
 
+    private int _letterDial01Step = 0;
     [SerializeField] private GameObject _letterDial01;
+    private int _letterDial02Step = 0;
     [SerializeField] private GameObject _letterDial02;
+    private int _letterDial03Step = 0;
     [SerializeField] private GameObject _letterDial03;
+    private int _letterDial04Step = 0;
     [SerializeField] private GameObject _letterDial04;
     private string _letterDial01Letter = ""; 
+    private string _letterDial02Letter = "";
+    private string _letterDial03Letter = "";
+    private string _letterDial04Letter = "";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,15 +46,45 @@ public class CylinderLockWordsPuzzle : MonoBehaviour
             {
                 EndPuzzle();
             }
+
+            if (Input.GetKeyDown((KeyCode.D)))
+            {
+                _currentLetterDial = Mathf.Min(_currentLetterDial + 1, 2);
+            }
+
+            if (Input.GetKeyDown((KeyCode.A)))
+            {
+                _currentLetterDial = Mathf.Max(_currentLetterDial - 1, 0);
+            }
             if (Input.GetKeyDown((KeyCode.W)))
             {
                 if (_currentLetterDial == 0)
                 {
                     _letterDial01Step = (_letterDial01Step + 1) % 16;
                     _letterDial01.transform.localEulerAngles = new Vector3(0, _letterDial01Step * 360f / 26, 0);
-                    LetterDialValues();
+                    LetterDial01Values();
                 }
-       
+
+                if (_currentLetterDial == 1)
+                {
+                    _letterDial02Step = (_letterDial02Step + 1) % 16;
+                    _letterDial02.transform.localEulerAngles = new Vector3(0, _letterDial02Step * 360f / 26, 0);
+                    LetterDial02Values();
+                }
+
+                if (_currentLetterDial == 2)
+                {
+                    _letterDial03Step = (_letterDial03Step + 1) % 16;
+                    _letterDial03.transform.localEulerAngles = new Vector3(0, _letterDial03Step * 360f / 26, 0);
+                    LetterDial03Values();
+                }
+
+                if (_currentLetterDial == 3)
+                {
+                    _letterDial04Step = (_letterDial04Step + 1) % 16;
+                    _letterDial04.transform.localEulerAngles = new Vector3(0, _letterDial04Step * 360f / 26, 0);
+                    LetterDial04Values();
+                }
             }
             if (Input.GetKeyDown((KeyCode.S)))
             {
@@ -56,7 +92,28 @@ public class CylinderLockWordsPuzzle : MonoBehaviour
                 {
                     _letterDial01Step = (_letterDial01Step - 1 + 16) % 16;
                     _letterDial01.transform.localEulerAngles = new Vector3(0, _letterDial01Step * 360f / 26, 0);
-                    LetterDialValues();
+                    LetterDial01Values();
+                }
+
+                if (_currentLetterDial == 1)
+                {
+                    _letterDial02Step = (_letterDial02Step + 1) % 16;
+                    _letterDial02.transform.localEulerAngles = new Vector3(0, _letterDial02Step * 360f / 26, 0);
+                    LetterDial02Values();
+                }
+
+                if (_currentLetterDial == 2)
+                {
+                    _letterDial03Step = (_letterDial03Step + 1) % 16;
+                    _letterDial03.transform.localEulerAngles = new Vector3(0, _letterDial03Step * 360f / 26, 0);
+                    LetterDial03Values();
+                }
+
+                if (_currentLetterDial == 3)
+                {
+                    _letterDial04Step = (_letterDial04Step + 1) % 16;
+                    _letterDial04.transform.localEulerAngles = new Vector3(0, _letterDial04Step * 360f / 26, 0);
+                    LetterDial04Values();
                 }
             }
         }
@@ -84,7 +141,7 @@ public class CylinderLockWordsPuzzle : MonoBehaviour
         _puzzleStarts = true;
     }
 
-    public void LetterDialValues()
+    public void LetterDial01Values()
     {
         switch (_letterDial01Step) 
         {
@@ -155,5 +212,223 @@ public class CylinderLockWordsPuzzle : MonoBehaviour
                 break;
         }
         Debug.Log("Letter Dial 01 Letter: " + _letterDial01Letter);
+    }
+    public void LetterDial02Values()
+    {
+        switch (_letterDial02Step)
+        {
+            case 0:
+                _letterDial02Letter = "A";
+                break;
+
+            case 1:
+                _letterDial02Letter = "B";
+                break;
+
+            case 2:
+                _letterDial02Letter  = "C";
+                break;
+
+            case 3:
+                _letterDial02Letter = "D";
+                break;
+
+            case 4:
+                _letterDial02Letter = "E";
+                break;
+
+            case 5:
+                _letterDial02Letter = "F";
+                break;
+
+            case 6:
+                _letterDial02Letter = "G";
+                break;
+            case 7:
+                _letterDial02Letter = "H";
+                break;
+
+            case 8:
+                _letterDial02Letter = "I";
+                break;
+
+            case 9:
+                _letterDial02Letter = "J";
+                break;
+
+            case 10:
+                _letterDial02Letter = "K";
+                break;
+            case 11:
+                _letterDial02Letter = "L";
+                break;
+
+            case 12:
+                _letterDial02Letter = "M";
+                break;
+
+            case 13:
+                _letterDial02Letter = "N";
+                break;
+
+            case 14:
+                _letterDial02Letter = "O";
+                break;
+
+            case 15:
+                _letterDial02Letter = "P";
+                break;
+
+            Default:
+                _letterDial02Letter = "A";
+                break;
+        }
+        Debug.Log("Letter Dial 02 Letter: " + _letterDial02Letter);
+    }
+
+    public void LetterDial03Values()
+    {
+        switch (_letterDial03Step)
+        {
+            case 0:
+                _letterDial03Letter = "A";
+                break;
+
+            case 1:
+                _letterDial03Letter = "B";
+                break;
+
+            case 2:
+                _letterDial03Letter = "C";
+                break;
+
+            case 3:
+                _letterDial03Letter = "D";
+                break;
+
+            case 4:
+                _letterDial03Letter = "E";
+                break;
+
+            case 5:
+                _letterDial03Letter = "F";
+                break;
+
+            case 6:
+                _letterDial03Letter = "G";
+                break;
+            case 7:
+                _letterDial03Letter = "H";
+                break;
+
+            case 8:
+                _letterDial03Letter = "I";
+                break;
+
+            case 9:
+                _letterDial03Letter = "J";
+                break;
+
+            case 10:
+                _letterDial03Letter = "K";
+                break;
+            case 11:
+                _letterDial03Letter = "L";
+                break;
+
+            case 12:
+                _letterDial03Letter = "M";
+                break;
+
+            case 13:
+                _letterDial03Letter = "N";
+                break;
+
+            case 14:
+                _letterDial03Letter = "O";
+                break;
+
+            case 15:
+                _letterDial03Letter = "P";
+                break;
+
+            default:
+                _letterDial03Letter = "A";
+                break;
+        }
+        Debug.Log("Letter Dial 03 Letter: " + _letterDial03Letter);
+    }
+
+    public void LetterDial04Values()
+    {
+        switch (_letterDial04Step)
+        {
+            case 0:
+                _letterDial04Letter = "A";
+                break;
+
+            case 1:
+                _letterDial04Letter = "B";
+                break;
+
+            case 2:
+                _letterDial04Letter = "C";
+                break;
+
+            case 3:
+                _letterDial04Letter = "D";
+                break;
+
+            case 4:
+                _letterDial04Letter = "E";
+                break;
+
+            case 5:
+                _letterDial04Letter = "F";
+                break;
+
+            case 6:
+                _letterDial04Letter = "G";
+                break;
+            case 7:
+                _letterDial04Letter = "H";
+                break;
+
+            case 8:
+                _letterDial04Letter = "I";
+                break;
+
+            case 9:
+                _letterDial04Letter = "J";
+                break;
+
+            case 10:
+                _letterDial04Letter = "K";
+                break;
+            case 11:
+                _letterDial04Letter = "L";
+                break;
+
+            case 12:
+                _letterDial04Letter = "M";
+                break;
+
+            case 13:
+                _letterDial04Letter = "N";
+                break;
+
+            case 14:
+                _letterDial04Letter = "O";
+                break;
+
+            case 15:
+                _letterDial04Letter = "P";
+                break;
+
+            default:
+                _letterDial04Letter = "A";
+                break;
+        }
+        Debug.Log("Letter Dial 04 Letter: " + _letterDial04Letter);
     }
 }
