@@ -523,6 +523,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPC - Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7389954052486598493, guid: ecb41aac61c3be5479e2ef677bb58be5, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
