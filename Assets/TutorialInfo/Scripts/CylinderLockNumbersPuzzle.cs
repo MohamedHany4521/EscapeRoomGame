@@ -164,7 +164,7 @@ public class CylinderLockNumbersPuzzle : MonoBehaviour
                 _cylinder01Leter = "1";
                 break;
         }
-        Debug.Log("Letter is: " + _cylinder01Leter + "and case is " + _cylinder01Step);
+        Debug.Log("Number is: " + _cylinder01Leter + "and case is " + _cylinder01Step);
         CheckPuzzle();
     }
 
@@ -206,7 +206,7 @@ public class CylinderLockNumbersPuzzle : MonoBehaviour
                 _cylinder02Leter = "1";
                 break;
         }
-        Debug.Log("Letter is: " + _cylinder02Leter + "and case is " + _cylinder02Step);
+        Debug.Log("Number is: " + _cylinder02Leter + "and case is " + _cylinder02Step);
         CheckPuzzle();
     }
     public void Cylinder03Values()
@@ -247,7 +247,7 @@ public class CylinderLockNumbersPuzzle : MonoBehaviour
                 _cylinder03Leter = "1";
                 break;
         }
-        Debug.Log("Letter is: " + _cylinder03Leter + "and case is " + _cylinder03Step);
+        Debug.Log("Number is: " + _cylinder03Leter + "and case is " + _cylinder03Step);
         CheckPuzzle();
     }
     public void Cylinder04Values()
@@ -288,7 +288,7 @@ public class CylinderLockNumbersPuzzle : MonoBehaviour
                 _cylinder04Leter = "1";
                 break;
         }
-        Debug.Log("Letter is: " + _cylinder04Leter + "and case is " + _cylinder04Step);
+        Debug.Log("Number is: " + _cylinder04Leter + "and case is " + _cylinder04Step);
         CheckPuzzle();
     }
 
