@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 7242984577539555430}
   - component: {fileID: 1742244925422127771}
   - component: {fileID: 2684508740913028420}
+  - component: {fileID: 8542194723019482103}
   m_Layer: 0
   m_Name: FPC - Player
   m_TagString: Untagged
@@ -242,6 +243,22 @@ MonoBehaviour:
   CrosshairOnHUD_CrosshairEnElHUD: {fileID: 0}
   AnchorPointOfPickedObject_PuntoDeAnclajeDelObjetoRecogido: {fileID: 9156749835950088163}
   PlayerCurrentStamina: 0
+--- !u!114 &8542194723019482103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975474905230341450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd5d43617e30f74b9b4de55eea071bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  playerCamera: {fileID: 7389954052486598493}
+  playerReach: 3.5
+  interactionKey: 101
+  allowMouseClick: 1
 --- !u!1 &6646539621758002762
 GameObject:
   m_ObjectHideFlags: 0

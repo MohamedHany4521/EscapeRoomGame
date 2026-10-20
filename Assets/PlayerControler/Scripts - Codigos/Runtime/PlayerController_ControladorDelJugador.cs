@@ -804,7 +804,7 @@ namespace FPC_CPP.Runtime
         {
             if (_playerIsOnGround) return;
 
-            if (_playerRigidbody.velocity.y < 0f)
+            if (_playerRigidbody.linearVelocity.y < 0f)
                 _playerRigidbody.AddForce(Physics.gravity * (Configuration_Configuracion.GravityMultiplierDuringTheJump * Configuration_Configuracion.AdditionalGravityMultiplierDuringTheFall - 1f), ForceMode.Acceleration);
             else
                 _playerRigidbody.AddForce(Physics.gravity * (Configuration_Configuracion.GravityMultiplierDuringTheJump - 1f), ForceMode.Acceleration);
@@ -828,9 +828,9 @@ namespace FPC_CPP.Runtime
             Vector3 movementDirection = _cachedMovementDirection;
             float finalSpeed = CalculateMovementSpeed(movementDirection);
 
-            float velocityY = (_playerIsOnGround && !_playerIsPerformingJump) ? Mathf.Min(_playerRigidbody.velocity.y, 0f) : _playerRigidbody.velocity.y;
+            float velocityY = (_playerIsOnGround && !_playerIsPerformingJump) ? Mathf.Min(_playerRigidbody.linearVelocity.y, 0f) : _playerRigidbody.linearVelocity.y;
 
-            _playerRigidbody.velocity = new Vector3(movementDirection.x * finalSpeed, velocityY, movementDirection.z * finalSpeed);
+            _playerRigidbody.linearVelocity = new Vector3(movementDirection.x * finalSpeed, velocityY, movementDirection.z * finalSpeed);
 
             if (_playerIsOnGround)
                 _movementDirectionAtTakeoff = movementDirection;
@@ -1298,9 +1298,9 @@ namespace FPC_CPP.Runtime
                 SpendStamina(totalCost);
             }
 
-            Vector3 currentVelocity = _playerRigidbody.velocity;
+            Vector3 currentVelocity = _playerRigidbody.linearVelocity;
             currentVelocity.y = 0f;
-            _playerRigidbody.velocity = currentVelocity;
+            _playerRigidbody.linearVelocity = currentVelocity;
             _playerRigidbody.AddForce(Vector3.up * Configuration_Configuracion.ForceAppliedWhenJumping, ForceMode.VelocityChange);
 
             _remainingJumps--;
@@ -1328,7 +1328,7 @@ namespace FPC_CPP.Runtime
         {
             if (!Configuration_Configuracion.EnableTheStaminaSystem) return;
 
-            bool playerIsMoving = (_playerRigidbody.velocity.x * _playerRigidbody.velocity.x + _playerRigidbody.velocity.z * _playerRigidbody.velocity.z) > 0.01f;
+            bool playerIsMoving = (_playerRigidbody.linearVelocity.x * _playerRigidbody.linearVelocity.x + _playerRigidbody.linearVelocity.z * _playerRigidbody.linearVelocity.z) > 0.01f;
             bool playerIsRunning = ThePlayerIsRunningNow() && _playerIsOnGround && playerIsMoving;
 
             if (playerIsRunning && Configuration_Configuracion.EnableStaminaCostWhenRunning)
@@ -1489,7 +1489,7 @@ namespace FPC_CPP.Runtime
         {
             if (!Configuration_Configuracion.EnableTheHeadBobbingSystem || CameraSupport_SoporteDeLaCamara == null) return;
 
-            float horizontalSpeed = Mathf.Sqrt(_playerRigidbody.velocity.x * _playerRigidbody.velocity.x + _playerRigidbody.velocity.z * _playerRigidbody.velocity.z);
+            float horizontalSpeed = Mathf.Sqrt(_playerRigidbody.linearVelocity.x * _playerRigidbody.linearVelocity.x + _playerRigidbody.linearVelocity.z * _playerRigidbody.linearVelocity.z);
 
             bool playerIsMovingOnGround = horizontalSpeed > 0.1f && _playerIsOnGround;
             bool playerIsRunningNow = playerIsMovingOnGround && ThePlayerIsRunningNow();
@@ -1615,7 +1615,7 @@ namespace FPC_CPP.Runtime
 
                 if (Configuration_Configuracion.EnableSpeedFOVEffect)
                 {
-                    float horizontalSpeed = new UnityEngine.Vector2(_playerRigidbody.velocity.x, _playerRigidbody.velocity.z).magnitude;
+                    float horizontalSpeed = new UnityEngine.Vector2(_playerRigidbody.linearVelocity.x, _playerRigidbody.linearVelocity.z).magnitude;
 
                     float speedThreshold = Configuration_Configuracion.BaseSpeedOfThePlayer * Configuration_Configuracion.SpeedFOVStartPercent;
                     float speedMax = Configuration_Configuracion.BaseSpeedOfThePlayer * Configuration_Configuracion.SpeedFOVMaxPercent;
@@ -1705,7 +1705,7 @@ namespace FPC_CPP.Runtime
             Rigidbody objectRigidbody = objectToPickUp.GetComponent<Rigidbody>();
             if (objectRigidbody != null)
             {
-                objectRigidbody.velocity = Vector3.zero;
+                objectRigidbody.linearVelocity = Vector3.zero;
                 objectRigidbody.isKinematic = true;
             }
 
@@ -1727,7 +1727,7 @@ namespace FPC_CPP.Runtime
             {
                 objectRigidbody.isKinematic = false;
 
-                objectRigidbody.velocity = _playerRigidbody.velocity;
+                objectRigidbody.linearVelocity = _playerRigidbody.linearVelocity;
             }
 
             if (_heldObjectCollider != null)
@@ -1764,7 +1764,7 @@ namespace FPC_CPP.Runtime
             Rigidbody rb = objectToThrow.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.velocity = Vector3.zero;
+                rb.linearVelocity = Vector3.zero;
                 if (Configuration_Configuracion.TakeIntoAccountTheMassOfTheObjectWhenThrowingIt)
                     rb.AddForce(throwDirection * finalForce, ForceMode.Impulse);
                 else
@@ -1916,7 +1916,7 @@ namespace FPC_CPP.Runtime
             float progressRatio = _timeSinceSlidingStarted / Configuration_Configuracion.DurationOfSlidingInArcadeMode;
             float currentSpeed = Mathf.Lerp(Configuration_Configuracion.BaseSpeedOfThePlayer * Configuration_Configuracion.InitialSpeedMultiplierOfArcadeSliding, Configuration_Configuracion.MinimumSpeedToKeepSliding, progressRatio);
 
-            _playerRigidbody.velocity = new Vector3(_slideDirectionAtStart.x * currentSpeed, _playerRigidbody.velocity.y, _slideDirectionAtStart.z * currentSpeed);
+            _playerRigidbody.linearVelocity = new Vector3(_slideDirectionAtStart.x * currentSpeed, _playerRigidbody.linearVelocity.y, _slideDirectionAtStart.z * currentSpeed);
 
             if (_timeSinceSlidingStarted >= Configuration_Configuracion.DurationOfSlidingInArcadeMode || currentSpeed <= Configuration_Configuracion.MinimumSpeedToKeepSliding)
                 CancelSliding();
@@ -1927,7 +1927,7 @@ namespace FPC_CPP.Runtime
 
             _timeSinceSlidingStarted += Time.fixedDeltaTime;
 
-            Vector3 horizontalVelocity = new Vector3(_playerRigidbody.velocity.x, 0f, _playerRigidbody.velocity.z);
+            Vector3 horizontalVelocity = new Vector3(_playerRigidbody.linearVelocity.x, 0f, _playerRigidbody.linearVelocity.z);
             _playerRigidbody.AddForce(-horizontalVelocity * Configuration_Configuracion.FrictionDuringPhysicalSliding, ForceMode.Acceleration);
 
             RaycastHit hit;
@@ -2063,7 +2063,7 @@ namespace FPC_CPP.Runtime
             Vector3 dashDirection = GetMovementDirection();
             if (dashDirection == Vector3.zero) dashDirection = transform.forward;
 
-            _playerRigidbody.velocity = new Vector3(dashDirection.x * Configuration_Configuracion.DashForce, _playerRigidbody.velocity.y, dashDirection.z * Configuration_Configuracion.DashForce);
+            _playerRigidbody.linearVelocity = new Vector3(dashDirection.x * Configuration_Configuracion.DashForce, _playerRigidbody.linearVelocity.y, dashDirection.z * Configuration_Configuracion.DashForce);
 
             if (Configuration_Configuracion.EnableTheHeadBobbingSystem && Configuration_Configuracion.EnableReactiveHeadBobbingWhenDashing)
                 _reactiveBobbingImpulse = transform.InverseTransformDirection(dashDirection) * Configuration_Configuracion.IntensityOfReactiveHeadBobbingWhenDashing;
