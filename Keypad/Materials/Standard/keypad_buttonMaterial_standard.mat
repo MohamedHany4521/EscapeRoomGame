@@ -11,9 +11,14 @@ Material:
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _NORMALMAP
+<<<<<<< Updated upstream:Keypad/Materials/Standard/keypad_buttonMaterial_standard.mat
   m_InvalidKeywords:
   - _METALLICSPECGLOSSMAP
   m_LightmapFlags: 4
+=======
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+>>>>>>> Stashed changes:Assets/Puzzles/Puzzles/SimonLightPuzzle/LightPuzzle/LampEmmisveSwitch.mat
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1

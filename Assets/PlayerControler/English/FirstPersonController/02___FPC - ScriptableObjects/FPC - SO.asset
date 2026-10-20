@@ -170,7 +170,11 @@ MonoBehaviour:
   KeyboardKeyToMoveForward: 273
   KeyboardKeyToMoveBackward: 274
   KeyboardKeyToMoveLeft: 276
+<<<<<<< Updated upstream
   KeyboardKeyToMoveRight: 275
+=======
+  KeyboardKeyToMoveRight: 276
+>>>>>>> Stashed changes
   KeyboardKeyToRun: 304
   KeyboardKeyToJump: 32
   KeyboardKeyToCrouch: 99

@@ -1,0 +1,407 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7938565035912563620
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 171.66559
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 155.58441
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.7103
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.551
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7887
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.500223
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5002226
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.4997774
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.4997769
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 89.949
+      objectReference: {fileID: 0}
+    - target: {fileID: -7753056157559060205, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a42cd0628c7fd7d43a5e5b214dc47f92, type: 2}
+    - target: {fileID: -4963893921311723681, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d55c7e69344bbc14cad61d770f1f4295, type: 2}
+    - target: {fileID: 919132149155446097, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_Name
+      value: LightSeqPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458745319562939081, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 52aad62eb95c5e04c954d9db42706a89, type: 2}
+    - target: {fileID: 8833952603509073938, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d37669725494dc49a3524b1c416fd70, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 578156482466702296, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4591057205029157336}
+    - targetCorrespondingSourceObject: {fileID: 578156482466702296, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2789750330055678991}
+    - targetCorrespondingSourceObject: {fileID: 578156482466702296, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8102629331268970973}
+    - targetCorrespondingSourceObject: {fileID: 2563705056479155998, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1586266622424340702}
+    - targetCorrespondingSourceObject: {fileID: 2563705056479155998, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4143100135100893483}
+    - targetCorrespondingSourceObject: {fileID: 2563705056479155998, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2877407300585216314}
+    - targetCorrespondingSourceObject: {fileID: -8896933815543115365, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1391655117325599072}
+    - targetCorrespondingSourceObject: {fileID: -8896933815543115365, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1243137511267028132}
+    - targetCorrespondingSourceObject: {fileID: -8896933815543115365, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8393919255924189689}
+    - targetCorrespondingSourceObject: {fileID: -7100277022242854338, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6219732556222359460}
+    - targetCorrespondingSourceObject: {fileID: -7100277022242854338, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 935781711606012190}
+    - targetCorrespondingSourceObject: {fileID: -7100277022242854338, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7672723362308393491}
+  m_SourcePrefab: {fileID: 100100000, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+--- !u!1 &321152844915368402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7664990335464827510, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 7938565035912563620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1501504172927325403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -361105173751390337, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 7938565035912563620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3030347657787229697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4312610105351746139, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 7938565035912563620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5602318492494175418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2563705056479155998, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 7938565035912563620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1586266622424340702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602318492494175418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ea6fd1994c6104b9f55c9c4d63986e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  outline: {fileID: 4143100135100893483}
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2877407300585216314}
+        m_TargetAssemblyTypeName: LEDButton, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &4143100135100893483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602318492494175418}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423b41c1ff3feab4b8d289335f7e3d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &2877407300585216314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602318492494175418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb784dfba3220742a5d9c85da6c9cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LEDButton
+  ledObject: {fileID: 1501504172927325403}
+  emissionIntensity: 2
+  materialIndex: 0
+  buttonIndex: 1
+--- !u!1 &7362669157942552700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 578156482466702296, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 7938565035912563620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4591057205029157336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7362669157942552700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ea6fd1994c6104b9f55c9c4d63986e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  outline: {fileID: 2789750330055678991}
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8102629331268970973}
+        m_TargetAssemblyTypeName: LEDButton, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &2789750330055678991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7362669157942552700}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423b41c1ff3feab4b8d289335f7e3d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &8102629331268970973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7362669157942552700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb784dfba3220742a5d9c85da6c9cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LEDButton
+  ledObject: {fileID: 3030347657787229697}
+  emissionIntensity: 2
+  materialIndex: 0
+  buttonIndex: 0
+--- !u!1 &7686746279321524799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8896933815543115365, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 7938565035912563620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1391655117325599072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686746279321524799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ea6fd1994c6104b9f55c9c4d63986e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  outline: {fileID: 1243137511267028132}
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8393919255924189689}
+        m_TargetAssemblyTypeName: LEDButton, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &1243137511267028132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686746279321524799}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423b41c1ff3feab4b8d289335f7e3d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &8393919255924189689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686746279321524799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb784dfba3220742a5d9c85da6c9cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LEDButton
+  ledObject: {fileID: 8621038044322192299}
+  emissionIntensity: 2
+  materialIndex: 0
+  buttonIndex: 2
+--- !u!1 &8313026420557160858 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7100277022242854338, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 7938565035912563620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6219732556222359460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313026420557160858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ea6fd1994c6104b9f55c9c4d63986e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  outline: {fileID: 935781711606012190}
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7672723362308393491}
+        m_TargetAssemblyTypeName: LEDButton, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &935781711606012190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313026420557160858}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423b41c1ff3feab4b8d289335f7e3d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &7672723362308393491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313026420557160858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb784dfba3220742a5d9c85da6c9cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LEDButton
+  ledObject: {fileID: 321152844915368402}
+  emissionIntensity: 2
+  materialIndex: 0
+  buttonIndex: 3
+--- !u!1 &8621038044322192299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1841803722424078351, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 7938565035912563620}
+  m_PrefabAsset: {fileID: 0}

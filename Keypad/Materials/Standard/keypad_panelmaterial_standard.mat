@@ -13,10 +13,15 @@ Material:
   - _EMISSION
   - _METALLICGLOSSMAP
   - _NORMALMAP
+<<<<<<< Updated upstream:Keypad/Materials/Standard/keypad_panelmaterial_standard.mat
   - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_InvalidKeywords:
   - _METALLICSPECGLOSSMAP
   m_LightmapFlags: 1
+=======
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+>>>>>>> Stashed changes:Assets/Puzzles/Puzzles/SimonLightPuzzle/LightPuzzle/LampEmmisveSwitch 1.mat
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
