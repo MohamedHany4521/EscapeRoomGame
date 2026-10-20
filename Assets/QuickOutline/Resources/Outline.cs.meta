@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+<<<<<<< Updated upstream
+guid: 27be7368c4e1f444fb2bffde0f7c34ca
+=======
+guid: 423b41c1ff3feab4b8d289335f7e3d2c
+>>>>>>> Stashed changes
+timeCreated: 1522369084
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 115488
+  packageName: Quick Outline
+  packageVersion: 1.1
+  assetPath: Assets/QuickOutline/Scripts/Outline.cs
+  uploadId: 485303

@@ -1,0 +1,423 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9046298478512328713
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 98.803375
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 89.072296
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.521
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0224
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.9805
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.500223
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5002226
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.4997774
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.4997769
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 89.949
+      objectReference: {fileID: 0}
+    - target: {fileID: -7753056157559060205, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 52aad62eb95c5e04c954d9db42706a89, type: 2}
+    - target: {fileID: -4963893921311723681, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d55c7e69344bbc14cad61d770f1f4295, type: 2}
+    - target: {fileID: -4481096152027154945, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1476380856410278708, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+    - target: {fileID: 919132149155446097, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_Name
+      value: LightSeqPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458745319562939081, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a42cd0628c7fd7d43a5e5b214dc47f92, type: 2}
+    - target: {fileID: 6881040828602943786, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2240168728484001873, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+    - target: {fileID: 8833952603509073938, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d37669725494dc49a3524b1c416fd70, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 578156482466702296, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5722789029771888048}
+    - targetCorrespondingSourceObject: {fileID: 578156482466702296, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9108157289658533237}
+    - targetCorrespondingSourceObject: {fileID: 578156482466702296, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6257041345929561520}
+    - targetCorrespondingSourceObject: {fileID: 2563705056479155998, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3088018487396178751}
+    - targetCorrespondingSourceObject: {fileID: 2563705056479155998, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4334270741464008606}
+    - targetCorrespondingSourceObject: {fileID: 2563705056479155998, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 627730781027990420}
+    - targetCorrespondingSourceObject: {fileID: -8896933815543115365, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2912163830384703456}
+    - targetCorrespondingSourceObject: {fileID: -8896933815543115365, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1420297942186893781}
+    - targetCorrespondingSourceObject: {fileID: -8896933815543115365, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3758141456584894287}
+    - targetCorrespondingSourceObject: {fileID: -7100277022242854338, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4175178914221503677}
+    - targetCorrespondingSourceObject: {fileID: -7100277022242854338, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3163929270952704884}
+    - targetCorrespondingSourceObject: {fileID: -7100277022242854338, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9135651756672193096}
+  m_SourcePrefab: {fileID: 100100000, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+--- !u!1 &538162875074367350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -361105173751390337, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 9046298478512328713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1717398198773660287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7664990335464827510, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 9046298478512328713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4155819135468412332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4312610105351746139, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 9046298478512328713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6782127070315169559 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2563705056479155998, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 9046298478512328713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3088018487396178751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782127070315169559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ea6fd1994c6104b9f55c9c4d63986e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  outline: {fileID: 627730781027990420}
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4334270741464008606}
+        m_TargetAssemblyTypeName: LEDButton, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  interactionType: 0
+--- !u!114 &4334270741464008606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782127070315169559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb784dfba3220742a5d9c85da6c9cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LEDButton
+  ledObject: {fileID: 538162875074367350}
+  emissionIntensity: 2
+  materialIndex: 0
+  buttonIndex: 0
+  InteractionType: 0
+--- !u!114 &627730781027990420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782127070315169559}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27be7368c4e1f444fb2bffde0f7c34ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!1 &6988556532388133431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7100277022242854338, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 9046298478512328713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4175178914221503677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988556532388133431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ea6fd1994c6104b9f55c9c4d63986e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  outline: {fileID: 9135651756672193096}
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3163929270952704884}
+        m_TargetAssemblyTypeName: LEDButton, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  interactionType: 0
+--- !u!114 &3163929270952704884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988556532388133431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb784dfba3220742a5d9c85da6c9cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LEDButton
+  ledObject: {fileID: 1717398198773660287}
+  emissionIntensity: 2
+  materialIndex: 0
+  buttonIndex: 0
+  InteractionType: 0
+--- !u!114 &9135651756672193096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988556532388133431}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27be7368c4e1f444fb2bffde0f7c34ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!1 &7207323129494241286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1841803722424078351, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 9046298478512328713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8470407544587039697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 578156482466702296, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 9046298478512328713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5722789029771888048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470407544587039697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ea6fd1994c6104b9f55c9c4d63986e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  outline: {fileID: 6257041345929561520}
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9108157289658533237}
+        m_TargetAssemblyTypeName: LEDButton, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  interactionType: 0
+--- !u!114 &9108157289658533237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470407544587039697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb784dfba3220742a5d9c85da6c9cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LEDButton
+  ledObject: {fileID: 4155819135468412332}
+  emissionIntensity: 2
+  materialIndex: 0
+  buttonIndex: 0
+  InteractionType: 0
+--- !u!114 &6257041345929561520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470407544587039697}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27be7368c4e1f444fb2bffde0f7c34ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!1 &8722721908011172242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8896933815543115365, guid: 12cbd0a038f9dfc4d9abe0a780b8970b, type: 3}
+  m_PrefabInstance: {fileID: 9046298478512328713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2912163830384703456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722721908011172242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ea6fd1994c6104b9f55c9c4d63986e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  outline: {fileID: 3758141456584894287}
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1420297942186893781}
+        m_TargetAssemblyTypeName: LEDButton, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  interactionType: 0
+--- !u!114 &1420297942186893781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722721908011172242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb784dfba3220742a5d9c85da6c9cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LEDButton
+  ledObject: {fileID: 7207323129494241286}
+  emissionIntensity: 2
+  materialIndex: 0
+  buttonIndex: 0
+  InteractionType: 0
+--- !u!114 &3758141456584894287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722721908011172242}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27be7368c4e1f444fb2bffde0f7c34ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
