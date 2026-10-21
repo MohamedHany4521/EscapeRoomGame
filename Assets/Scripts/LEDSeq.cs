@@ -1,6 +1,7 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
 
 public class LEDSeq : MonoBehaviour
 {
@@ -10,27 +11,67 @@ public class LEDSeq : MonoBehaviour
     [SerializeField] private float nextRoundDelay = 1f;
     [SerializeField] private int maxSequenceLength = 6;
 
-    private List<int> sequence = new List<int>();
-    private List<int> playerSequence = new List<int>();
-    private bool isPlayingSequence = false;
-    private bool isPlayerTurn = false;
-    private int currentRound = 0;
+    [Header("Random Code")]
+    [SerializeField] private int minRandomCode = 0;
+    [SerializeField] private int maxRandomCode = 9;
+    [SerializeField] private TextMeshProUGUI[] randomCodeDigits = new TextMeshProUGUI[4];
 
-    private void Start()
+    private readonly List<int> sequence = new List<int>();
+    private readonly List<int> playerSequence = new List<int>();
+
+    private int[] randomCode = new int[0];
+    private int currentRound;
+    private bool isPlayingSequence;
+    private bool isPlayerTurn;
+    private bool isConfigured;
+
+    private void Awake()
     {
-        if (ledButtons == null || ledButtons.Length == 0)
+        isConfigured = ledButtons != null && ledButtons.Length > 0;
+
+        if (!isConfigured)
         {
-            Debug.LogError("LEDSeq: No LED buttons assigned!");
+            Debug.LogError("LEDSeq: Assign at least one LED button.", this);
             return;
         }
 
-        LEDButton.OnLEDButtonPressed += OnButtonPressed;
-        Debug.Log("LED Sequence game ready! Press E on any button to start...");
+        for (int i = 0; i < ledButtons.Length; i++)
+        {
+            if (ledButtons[i] == null)
+            {
+                Debug.LogError($"LEDSeq: LED button at array position {i} is not assigned.", this);
+                isConfigured = false;
+                continue;
+            }
+
+            for (int j = 0; j < i; j++)
+            {
+                if (ledButtons[j] != null &&
+                    ledButtons[j].ButtonIndex == ledButtons[i].ButtonIndex)
+                {
+                    Debug.LogError(
+                        $"LEDSeq: Button index {ledButtons[i].ButtonIndex} is assigned more than once.",
+                        this);
+                    isConfigured = false;
+                }
+            }
+        }
     }
 
-    private void OnDestroy()
+    private void OnEnable()
+    {
+        LEDButton.OnLEDButtonPressed += OnButtonPressed;
+    }
+
+    private void OnDisable()
     {
         LEDButton.OnLEDButtonPressed -= OnButtonPressed;
+    }
+
+    private void Start()
+    {
+        if (isConfigured)
+            Debug.Log("LED sequence game ready. Press E on a button to start.");
     }
 
     private void StartNewGame()
@@ -38,6 +79,7 @@ public class LEDSeq : MonoBehaviour
         sequence.Clear();
         playerSequence.Clear();
         currentRound = 0;
+
         Debug.Log("Simon Says game started!");
         StartCoroutine(NextRound());
     }
@@ -48,68 +90,58 @@ public class LEDSeq : MonoBehaviour
 
         if (currentRound > maxSequenceLength)
         {
-            Debug.Log("<color=green>You won! All 6 rounds completed!</color>");
+            Debug.Log($"You won! All {maxSequenceLength} rounds completed.");
             currentRound = 0;
+            ShowRandomCode();
             yield break;
         }
 
-        // Add ONE new LED to the sequence
-        int randomIndex = Random.Range(0, ledButtons.Length);
-        sequence.Add(randomIndex);
-        Debug.Log($"<color=yellow>Round {currentRound}: Added LED {randomIndex}. Full sequence: {string.Join(", ", sequence)}</color>");
+        int randomLEDIndex = Random.Range(0, ledButtons.Length);
+        sequence.Add(randomLEDIndex);
 
-        // Play the sequence and wait for player
-        yield return StartCoroutine(PlaySequenceAndWaitForPlayer());
+        Debug.Log($"Round {currentRound}: Added LED {randomLEDIndex}.");
+        yield return PlaySequenceAndWaitForPlayer();
     }
 
     private IEnumerator PlaySequenceAndWaitForPlayer()
     {
         while (true)
         {
-            // Play the current sequence
-            yield return StartCoroutine(PlaySequence());
+            yield return PlaySequence();
 
-            // Wait for player input
             playerSequence.Clear();
             isPlayerTurn = true;
-            Debug.Log($"<color=green>Your turn! Repeat {sequence.Count} LED(s): {string.Join(", ", sequence)}</color>");
 
-            // Wait until player finishes their input
+            Debug.Log($"Your turn! Repeat {sequence.Count} LED(s).");
+
             while (playerSequence.Count < sequence.Count && isPlayerTurn)
-            {
                 yield return new WaitForSeconds(0.1f);
-            }
 
             isPlayerTurn = false;
 
-            // Check if player sequence is correct
-            bool isCorrect = true;
-            for (int i = 0; i < playerSequence.Count; i++)
+            if (IsPlayerSequenceCorrect())
             {
-                if (playerSequence[i] != sequence[i])
-                {
-                    isCorrect = false;
-                    break;
-                }
-            }
-
-            if (isCorrect)
-            {
-
                 yield return new WaitForSeconds(nextRoundDelay);
-                StartCoroutine(NextRound());
-                yield break; 
-                // Exit this loop and go to next round
-
-
+                yield return NextRound();
+                yield break;
             }
-            else
-            {
-                
-                yield return new WaitForSeconds(nextRoundDelay);
-                // Loop continues - plays sequence again
-            }
+
+            yield return new WaitForSeconds(nextRoundDelay);
         }
+    }
+
+    private bool IsPlayerSequenceCorrect()
+    {
+        if (playerSequence.Count != sequence.Count)
+            return false;
+
+        for (int i = 0; i < sequence.Count; i++)
+        {
+            if (playerSequence[i] != sequence[i])
+                return false;
+        }
+
+        return true;
     }
 
     private IEnumerator PlaySequence()
@@ -119,52 +151,94 @@ public class LEDSeq : MonoBehaviour
 
         yield return new WaitForSeconds(sequenceDelay);
 
-        Debug.Log($"Playing {sequence.Count} LED(s)...");
-
         foreach (int ledIndex in sequence)
         {
-            yield return StartCoroutine(PlayLED(ledIndex));
+            yield return PlayLED(ledIndex);
             yield return new WaitForSeconds(sequenceDelay);
         }
 
         isPlayingSequence = false;
     }
 
-    private IEnumerator PlayLED(int buttonIndex)
+    private IEnumerator PlayLED(int ledIndex)
     {
-        if (buttonIndex >= 0 && buttonIndex < ledButtons.Length && ledButtons[buttonIndex] != null)
-        {
-            ledButtons[buttonIndex].TurnOn();
-            yield return new WaitForSeconds(ledOnDuration);
-            ledButtons[buttonIndex].TurnOff();
-        }
+        if (ledIndex < 0 || ledIndex >= ledButtons.Length || ledButtons[ledIndex] == null)
+            yield break;
+
+        ledButtons[ledIndex].TurnOn();
+        yield return new WaitForSeconds(ledOnDuration);
+        ledButtons[ledIndex].TurnOff();
     }
 
     private void OnButtonPressed(int buttonIndex)
     {
-        // Start game on first button press
+        if (!isConfigured)
+            return;
+
+        int ledArrayIndex = FindLEDArrayIndex(buttonIndex);
+
+        if (ledArrayIndex < 0)
+        {
+            Debug.LogWarning($"LEDSeq: No LED button has button index {buttonIndex}.", this);
+            return;
+        }
+
         if (currentRound == 0)
         {
-            Debug.Log($"Starting game with button {buttonIndex}!");
+            Debug.Log($"Starting game with button {buttonIndex}.");
             StartNewGame();
             return;
         }
 
-        // Only accept input during player's turn
-        if (!isPlayerTurn || isPlayingSequence)
+        if (!isPlayerTurn ||
+            isPlayingSequence ||
+            playerSequence.Count >= sequence.Count)
         {
             return;
         }
 
-        playerSequence.Add(buttonIndex);
-
-        // Visual feedback
-        StartCoroutine(PlayLEDFeedback(buttonIndex));
+        playerSequence.Add(ledArrayIndex);
     }
 
-    private IEnumerator PlayLEDFeedback(int buttonIndex)
+    private int FindLEDArrayIndex(int buttonIndex)
     {
-        ledButtons[buttonIndex].TurnOn();
-        yield return new WaitForSeconds(0.2f);
-        ledButtons[buttonIndex].TurnOff();
-    }}
+        for (int i = 0; i < ledButtons.Length; i++)
+        {
+            if (ledButtons[i].ButtonIndex == buttonIndex)
+                return i;
+        }
+
+        return -1;
+    }
+
+    private void ShowRandomCode()
+    {
+        if (randomCodeDigits == null || randomCodeDigits.Length == 0)
+        {
+            Debug.LogError("LEDSeq: Assign the random-code text fields.", this);
+            return;
+        }
+
+        if (maxRandomCode < minRandomCode)
+        {
+            Debug.LogError("LEDSeq: Maximum random-code digit must be at least the minimum.", this);
+            return;
+        }
+
+        randomCode = new int[randomCodeDigits.Length];
+
+        for (int i = 0; i < randomCodeDigits.Length; i++)
+        {
+            randomCode[i] = Random.Range(minRandomCode, maxRandomCode + 1);
+
+            if (randomCodeDigits[i] == null)
+            {
+                Debug.LogError($"LEDSeq: Random-code text field {i} is not assigned.", this);
+                continue;
+            }
+
+            randomCodeDigits[i].text = randomCode[i].ToString();
+            randomCodeDigits[i].gameObject.SetActive(true);
+        }
+    }
+}
