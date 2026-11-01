@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 1742244925422127771}
   - component: {fileID: 2684508740913028420}
   - component: {fileID: 8542194723019482103}
+  - component: {fileID: 8542194723019482104}
   m_Layer: 0
   m_Name: FPC - Player
   m_TagString: Untagged
@@ -259,6 +260,19 @@ MonoBehaviour:
   playerReach: 3.5
   interactionKey: 101
   allowMouseClick: 1
+--- !u!114 &8542194723019482104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975474905230341450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057ecdadfb9f45fe9e7d81d78b348a5b, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
+  items: []
 --- !u!1 &6646539621758002762
 GameObject:
   m_ObjectHideFlags: 0

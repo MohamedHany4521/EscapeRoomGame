@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Pickable
+  - Key
+  - Battery
+  - Document
   layers:
   - Default
   - TransparentFX

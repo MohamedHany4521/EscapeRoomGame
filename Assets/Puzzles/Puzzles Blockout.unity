@@ -1870,9 +1870,11 @@ GameObject:
   - component: {fileID: 335048464}
   - component: {fileID: 335048463}
   - component: {fileID: 335048462}
+  - component: {fileID: 335048466}
+  - component: {fileID: 335048467}
   m_Layer: 0
   m_Name: Item3
-  m_TagString: Untagged
+  m_TagString: Document
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1970,6 +1972,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -89.993, z: 0}
+--- !u!114 &335048466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335048461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &335048467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335048461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b16589a34bc4efdb62614b720d09a6c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::CollectibleItem
+  itemID: Document_01
+  displayName: Document
+  itemTag: Document
+  description: A classified document containing vital instructions.
+  outline: {fileID: 335048466}
 --- !u!1 &435438473
 GameObject:
   m_ObjectHideFlags: 0
@@ -6581,9 +6618,11 @@ GameObject:
   - component: {fileID: 1129358512}
   - component: {fileID: 1129358511}
   - component: {fileID: 1129358510}
+  - component: {fileID: 1129358514}
+  - component: {fileID: 1129358515}
   m_Layer: 0
   m_Name: Item2
-  m_TagString: Untagged
+  m_TagString: Battery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6681,6 +6720,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -89.993, z: 0}
+--- !u!114 &1129358514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129358509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1129358515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129358509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b16589a34bc4efdb62614b720d09a6c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::CollectibleItem
+  itemID: Battery_Device1
+  displayName: Battery
+  itemTag: Battery
+  description: A high-capacity battery for electronic devices.
+  outline: {fileID: 1129358514}
 --- !u!1 &1132504184
 GameObject:
   m_ObjectHideFlags: 0
@@ -6693,9 +6767,11 @@ GameObject:
   - component: {fileID: 1132504187}
   - component: {fileID: 1132504186}
   - component: {fileID: 1132504185}
+  - component: {fileID: 1132504189}
+  - component: {fileID: 1132504190}
   m_Layer: 0
   m_Name: Item1
-  m_TagString: Untagged
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6793,6 +6869,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -89.993, z: 0}
+--- !u!114 &1132504189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132504184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1132504190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132504184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b16589a34bc4efdb62614b720d09a6c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::CollectibleItem
+  itemID: Key_Door1
+  displayName: Door Key
+  itemTag: Key
+  description: A small brass key that might unlock a door.
+  outline: {fileID: 1132504189}
 --- !u!1 &1146462442
 GameObject:
   m_ObjectHideFlags: 0
