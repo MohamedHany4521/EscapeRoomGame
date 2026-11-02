@@ -7,8 +7,8 @@ public class Interactable : MonoBehaviour, IInteractable
     [SerializeField] private Outline outline;
     [SerializeField] private UnityEvent onInteract;
     [SerializeField] private string interactionPrompt = "Interact";
+    [SerializeField] UI ui_text;
 
-    
 
     private bool isInvoking;
 
@@ -40,14 +40,22 @@ public class Interactable : MonoBehaviour, IInteractable
 
     public void ShowOutline()
     {
-        if (outline != null)
+        if (outline != null && ui_text != null)
+        {
             outline.enabled = true;
+            ui_text.SetInteractionText(interactionPrompt);
+        }
+
     }
 
     public void HideOutline()
     {
-        if (outline != null)
+        if (outline != null && ui_text != null)
+        {
             outline.enabled = false;
+            ui_text.ClearInteractionText();
+        }
+            
     }
 
 
