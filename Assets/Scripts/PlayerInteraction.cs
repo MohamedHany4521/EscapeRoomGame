@@ -4,6 +4,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float playerReach = 2f;
+    [SerializeField] private KeyCode interactKey = KeyCode.E;
 
     [Header("Cursor UI")]
     [SerializeField] private GameObject normalCursor;
@@ -26,7 +27,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         CheckInteraction();
 
-        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
+        if (Input.GetKeyDown(interactKey) && currentInteractable != null && currentInteractable.IsInteractable)
             currentInteractable.Interact();
     }
 
@@ -65,15 +66,34 @@ public class PlayerInteraction : MonoBehaviour
     private void SetCurrentInteractable(IInteractable target)
     {
         if (ReferenceEquals(currentInteractable, target))
+        {
+            UpdateInteractionPrompt(target);
             return;
+        }
 
         if (currentInteractable != null)
             currentInteractable.HideOutline();
 
         currentInteractable = target;
 
+        UpdateInteractionPrompt(target);
+
         if (currentInteractable != null)
             currentInteractable.ShowOutline();
+    }
+
+    private void UpdateInteractionPrompt(IInteractable target)
+    {
+        if (UI.instance == null)
+            return;
+
+        if (target == null || string.IsNullOrWhiteSpace(target.InteractionPrompt))
+        {
+            UI.instance.ClearInteractionText();
+            return;
+        }
+
+        UI.instance.SetInteractionText($"Press {interactKey} to {target.InteractionPrompt}");
     }
 
     private void ShowCursor(InteractableType? type)
