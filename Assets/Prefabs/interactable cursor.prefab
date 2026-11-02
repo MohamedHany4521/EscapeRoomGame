@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5879278922356073333}
   - component: {fileID: 8566354403222903988}
   - component: {fileID: 1324535379331173082}
-  - component: {fileID: 629235995979186812}
+  - component: {fileID: 1228950817223291688}
   m_Layer: 0
   m_Name: Adjustable
   m_TagString: Untagged
@@ -126,13 +126,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ea6fd1994c6104b9f55c9c4d63986e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  outline: {fileID: 629235995979186812}
+  outline: {fileID: 1228950817223291688}
   onInteract:
     m_PersistentCalls:
       m_Calls: []
-  interactionPrompt: Interact
   interactionType: 1
---- !u!114 &629235995979186812
+--- !u!114 &1228950817223291688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5171849137205832012}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27be7368c4e1f444fb2bffde0f7c34ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Outline
   outlineMode: 0
@@ -278,7 +277,7 @@ GameObject:
   - component: {fileID: 258796139755109109}
   - component: {fileID: 3311593572183663982}
   - component: {fileID: 6213656607507349539}
-  - component: {fileID: 1018592680560033632}
+  - component: {fileID: 6515455692128436312}
   m_Layer: 0
   m_Name: Hold
   m_TagString: Untagged
@@ -391,13 +390,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ea6fd1994c6104b9f55c9c4d63986e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  outline: {fileID: 1018592680560033632}
+  outline: {fileID: 6515455692128436312}
   onInteract:
     m_PersistentCalls:
       m_Calls: []
-  interactionPrompt: Interact
   interactionType: 2
---- !u!114 &1018592680560033632
+--- !u!114 &6515455692128436312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -406,7 +404,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6085547620564273951}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27be7368c4e1f444fb2bffde0f7c34ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Outline
   outlineMode: 0
@@ -428,7 +426,7 @@ GameObject:
   - component: {fileID: 8677955938729727462}
   - component: {fileID: 2283506957730060098}
   - component: {fileID: 5409364517190899199}
-  - component: {fileID: 9112366882802718574}
+  - component: {fileID: 5856353558551390181}
   m_Layer: 0
   m_Name: Examine
   m_TagString: Untagged
@@ -541,13 +539,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ea6fd1994c6104b9f55c9c4d63986e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  outline: {fileID: 9112366882802718574}
+  outline: {fileID: 5856353558551390181}
   onInteract:
     m_PersistentCalls:
       m_Calls: []
-  interactionPrompt: Interact
   interactionType: 3
---- !u!114 &9112366882802718574
+--- !u!114 &5856353558551390181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -556,7 +553,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8292540023947312750}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27be7368c4e1f444fb2bffde0f7c34ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Outline
   outlineMode: 0
