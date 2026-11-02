@@ -241,4 +241,8 @@ public class LEDSeq : MonoBehaviour
             randomCodeDigits[i].gameObject.SetActive(true);
         }
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
