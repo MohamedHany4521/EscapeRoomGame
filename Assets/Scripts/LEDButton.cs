@@ -96,8 +96,4 @@ public class LEDButton : MonoBehaviour
         TurnOff();
         feedbackCoroutine = null;
     }
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes

@@ -6,21 +6,19 @@ public class Interactable : MonoBehaviour, IInteractable
 {
     [SerializeField] private Outline outline;
     [SerializeField] private UnityEvent onInteract;
-<<<<<<< Updated upstream
-=======
     [SerializeField] private string interactionPrompt = "Interact";
->>>>>>> Stashed changes
-    [SerializeField] private InteractableType interactionType = InteractableType.Generic;
+
+    
 
     private bool isInvoking;
 
-    public InteractableType InteractionType => interactionType;
-<<<<<<< Updated upstream
-    public bool IsInteractable => isActiveAndEnabled;
-=======
+
     public string InteractionPrompt => interactionPrompt;
     public virtual bool IsInteractable => isActiveAndEnabled;
->>>>>>> Stashed changes
+
+    InteractableType IInteractable.InteractionType => InteractionType;
+
+    public InteractableType InteractionType;
 
     private void OnEnable()
     {
@@ -52,11 +50,9 @@ public class Interactable : MonoBehaviour, IInteractable
             outline.enabled = false;
     }
 
-<<<<<<< Updated upstream
+
     public virtual void Interact()
-=======
-    public void Interact()
->>>>>>> Stashed changes
+
     {
         if (!IsInteractable || isInvoking)
             return;
@@ -72,8 +68,4 @@ public class Interactable : MonoBehaviour, IInteractable
             isInvoking = false;
         }
     }
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes
