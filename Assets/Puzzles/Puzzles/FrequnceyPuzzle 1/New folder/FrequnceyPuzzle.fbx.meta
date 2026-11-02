@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: FrequnceyPuzzle
     second: {fileID: 2100000, guid: 34a0be0625995f846ad876816501d2c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen
+    second: {fileID: 2100000, guid: 5d1898f902b67cf4b9c1b82d8027f682, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
