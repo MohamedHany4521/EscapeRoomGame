@@ -16,6 +16,7 @@ Shader "Custom/WaveScope"
         _Intensity ("Intensity", Range(0,5)) = 0.9
         _Scan ("Scanlines", Range(0,0.3)) = 0.1
         _Aspect ("Screen Aspect (W/H)", Float) = 1.3
+        _Speed ("Scroll Speed", Range(-2,2)) = 0.3
     }
     SubShader
     {
@@ -30,6 +31,7 @@ Shader "Custom/WaveScope"
             float4 _BG, _ColA, _ColB;
             float _AmpA,_FreqA,_PhaseA,_AmpB,_FreqB,_PhaseB;
             float _Thick,_Glow,_Intensity,_Scan,_Aspect;
+            float _Speed;
 
             struct v2f { float4 pos:SV_POSITION; float2 uv:TEXCOORD0; };
 
@@ -47,7 +49,7 @@ Shader "Custom/WaveScope"
                 [unroll] for (int k = -12; k <= 12; k++)
                 {
                     float x = uv.x + k * 0.003;
-                    float y = 0.5 + amp * sin((x * freq + ph) * 6.28318);
+                    float y = 0.5 + amp * sin((x * freq + ph + _Time.y * _Speed) * 6.28318);
                     float2 p = float2((x - uv.x) * _Aspect, uv.y - y);
                     d = min(d, length(p));
                 }

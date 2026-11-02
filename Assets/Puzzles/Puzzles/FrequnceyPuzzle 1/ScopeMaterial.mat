@@ -35,10 +35,11 @@ Material:
     - _PhaseA: 0
     - _PhaseB: 0
     - _Scan: 0.3
+    - _Speed: 1
     - _Thick: 0.0219
     m_Colors:
-    - _BG: {r: 0.3018868, g: 0.101103604, b: 0.23495904, a: 1}
-    - _ColA: {r: 1, g: 0.50775903, b: 0, a: 1}
-    - _ColB: {r: 0, g: 0.91298866, b: 1, a: 1}
+    - _BG: {r: 0.30980393, g: 0.07843137, b: 0.25716734, a: 1}
+    - _ColA: {r: 0, g: 0.91487026, b: 1, a: 1}
+    - _ColB: {r: 1, g: 0.015461222, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
