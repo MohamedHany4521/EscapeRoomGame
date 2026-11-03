@@ -17,13 +17,18 @@ public class UI : MonoBehaviour
 
     public void SetInteractionText(string text)
     {
-        interactionText.text = text ;
+        if (interactionText == null)
+            return;
+
+        interactionText.text = text;
         interactionText.gameObject.SetActive(true);
     }
 
     public void ClearInteractionText()
     {
-       
+        if (interactionText == null)
+            return;
+
         interactionText.gameObject.SetActive(false);
     }
 }
