@@ -45,10 +45,10 @@ MonoBehaviour:
     probeSamplingDebugTexture: {fileID: 2800000, guid: 24ec0e140fb444a44ab96ee80844e18e, type: 3}
     probeVolumeBlendStatesCS: {fileID: 7200000, guid: b9a23f869c4fd45f19c5ada54dd82176, type: 3}
   m_RendererFeatures:
+  - {fileID: 3855738771313273821}
   - {fileID: 7833122117494664109}
   - {fileID: -4535697220552956535}
-  - {fileID: 3855738771313273821}
-  m_RendererFeatureMap: ad6b866f10d7b46c89e536b868f70dc1dd2bd4e2fb558235
+  m_RendererFeatureMap: dd2bd4e2fb558235ad6b866f10d7b46c89e536b868f70dc1
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23ae7f0155a7434c872d1c04bce1584, type: 3}
   m_Name: ScreenSpaceOutlines
   m_EditorClassIdentifier: Assembly-CSharp::ScreenSpaceOutlines
-  m_Active: 1
-  renderPassEvent: 350
+  m_Active: 0
+  renderPassEvent: 400
   outlinesLayerMask:
     serializedVersion: 2
     m_Bits: 55
@@ -109,6 +109,22 @@ MonoBehaviour:
     perObjectData: 0
     enableDynamicBatching: 0
     enableInstancing: 0
+--- !u!114 &5970913576273320421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3989ce8b7274e12a85b1794d2fe9d6b, type: 3}
+  m_Name: PureVolumetricFogRendererFeature
+  m_EditorClassIdentifier: BKPureNature.PureVolumetricFog::BKPureNature.PureVolumetricFogRendererFeature
+  m_Active: 1
+  resolution: 1
+  depthTolerance: 0.463
+  _compositeMaterial: {fileID: 0}
 --- !u!114 &7833122117494664109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +145,7 @@ MonoBehaviour:
     Source: 1
     NormalSamples: 1
     Intensity: 0.4
-    DirectLightingStrength: 0.959
+    DirectLightingStrength: 1
     Radius: 0.3
     Samples: 1
     BlurQuality: 0
