@@ -54,7 +54,7 @@ MonoBehaviour:
   ExtraForcePerSecondOfTheVariableJump: 15
   LayersThatAreConsideredGround:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 64
   RadiusOfTheGroundDetectionOverlapSphere: 0.25
   DownwardOffsetOfTheGroundDetectionOverlapSphere: 0.05
   EnableCoyoteTime: 1
@@ -81,10 +81,10 @@ MonoBehaviour:
   ShowTheStaminaBarOnTheHUD: 1
   EnableTheHeadBobbingSystem: 1
   EnableHeadBobbingWhileThePlayerWalks: 1
-  IntensityOfHeadBobbingWhileThePlayerWalks: 0.08
+  IntensityOfHeadBobbingWhileThePlayerWalks: 0.06
   FrequencyOfHeadBobbingWhileThePlayerWalks: 15
   EnableHeadBobbingWhileThePlayerRuns: 1
-  IntensityOfHeadBobbingWhileThePlayerRuns: 0.2
+  IntensityOfHeadBobbingWhileThePlayerRuns: 0.15
   FrequencyOfHeadBobbingWhileThePlayerRuns: 20
   EnableReactiveHeadBobbingWhenJumpingAndLanding: 1
   IntensityOfReactiveHeadBobbingWhenJumping: 0.08
