@@ -1575,7 +1575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
   _timerText: {fileID: 1569725768}
-  _timeRemaining: 5
+  _timeRemaining: 900
 --- !u!1 &371702092 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ae53a6c1a7eaa6b44a483f6922f34b37, type: 3}
