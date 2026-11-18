@@ -2,17 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UI : MonoBehaviour
 {
-    public static UI instance;
-
-    private void Awake()
-    {
-
-
-        instance = this;
-
-    }
-
-    [SerializeField] private Text interactionText;
+   [SerializeField] private Text interactionText;
 
 
     public void SetInteractionText(string text)
