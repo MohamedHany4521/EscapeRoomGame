@@ -6,19 +6,15 @@ public class Interactable : MonoBehaviour, IInteractable
 {
     [SerializeField] private Outline outline;
     [SerializeField] private UnityEvent onInteract;
-    [SerializeField] private string interactionPrompt = "Interact";
-    [SerializeField] UI ui_text;
-
+    [SerializeField] private string interactionPrompt = "Press E to interact";
+    [SerializeField] private UI promptUi; 
+    [SerializeField] private InteractableType interactionType;
 
     private bool isInvoking;
 
-
     public string InteractionPrompt => interactionPrompt;
     public virtual bool IsInteractable => isActiveAndEnabled;
-
-    InteractableType IInteractable.InteractionType => InteractionType;
-
-    public InteractableType InteractionType;
+    public InteractableType InteractionType => interactionType;
 
     private void OnEnable()
     {
@@ -40,20 +36,20 @@ public class Interactable : MonoBehaviour, IInteractable
 
     public void ShowOutline()
     {
-        if (outline != null && ui_text != null)
+        if (outline != null && promptUi != null)
         {
             outline.enabled = true;
-            ui_text.SetInteractionText(interactionPrompt);
+            promptUi.SetInteractionText(interactionPrompt);
         }
 
     }
 
     public void HideOutline()
     {
-        if (outline != null && ui_text != null)
+        if (outline != null && promptUi != null)
         {
             outline.enabled = false;
-            ui_text.ClearInteractionText();
+            promptUi.ClearInteractionText();
         }
             
     }
