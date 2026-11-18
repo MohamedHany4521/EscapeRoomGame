@@ -4,8 +4,6 @@ public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float playerReach = 2f;
-
-    [Header("Cursor UI")]
     [SerializeField] private GameObject normalCursor;
     [SerializeField] private GameObject adjustCursor;
     [SerializeField] private GameObject holdCursor;
