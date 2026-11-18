@@ -3,12 +3,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(BoxCollider))]
 public class RoomRestartButton : MonoBehaviour
 {
     [SerializeField] private Transform buttonTop;
-    [SerializeField, Min(0f)] private float pressDistance = 0.03f;
-    [SerializeField, Min(0.01f)] private float pressDuration = 0.08f;
+    [SerializeField] private float pressDistance = 0.03f;
+    [SerializeField] private float pressDuration = 0.08f;
 
     private Vector3 buttonTopStartPosition;
     private Coroutine restartCoroutine;
@@ -19,7 +18,7 @@ public class RoomRestartButton : MonoBehaviour
     {
         if (buttonTop == null)
         {
-            Debug.LogError("RoomRestartButton: Assign the movable button top.", this);
+            Debug.Log("RoomRestartButton: Assign the movable button top.", this);
         }
         else
         {
@@ -30,7 +29,7 @@ public class RoomRestartButton : MonoBehaviour
         roomSceneBuildIndex = gameObject.scene.buildIndex;
         if (roomSceneBuildIndex < 0)
         {
-            Debug.LogError(
+            Debug.Log(
                 $"RoomRestartButton: Scene '{gameObject.scene.name}' must be added to Build Settings to restart it.",
                 this);
         }
