@@ -52,7 +52,11 @@ public class PuzzleInteractable : MonoBehaviour, IInteractable
         set => customTransitionDuration = Mathf.Max(0f, value);
     }
 
+    [Header("Interaction Type")]
+    [SerializeField] private InteractableType interactionType = InteractableType.Examine;
+
     public bool IsInteractable => enabled && gameObject.activeInHierarchy;
+    public InteractableType InteractionType => interactionType;
 
     private void Awake()
     {

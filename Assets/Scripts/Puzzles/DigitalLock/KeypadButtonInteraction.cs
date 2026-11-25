@@ -38,7 +38,11 @@ public class KeypadButtonInteraction : MonoBehaviour, IInteractable, IPuzzleClic
             outline.enabled = false;
     }
 
+    [Header("Interaction Type")]
+    [SerializeField] private InteractableType interactionType = InteractableType.Adjust;
+
     public bool IsInteractable => enabled && gameObject.activeInHierarchy;
+    public InteractableType InteractionType => interactionType;
 
     public void Interact()
     {

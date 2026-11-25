@@ -19,10 +19,14 @@ public class DocumentReaderInteraction : MonoBehaviour, IInteractable
     [Tooltip("Outline component used for highlighting when looked at.")]
     [SerializeField] private Outline outline;
 
+    [Header("Interaction Type")]
+    [SerializeField] private InteractableType interactionType = InteractableType.Examine;
+
     public string RequiredDocumentID => requiredDocumentID;
     public DocumentInspectionUI InspectionUI => inspectionUI;
 
     public bool IsInteractable => enabled && gameObject.activeInHierarchy && (inspectionUI == null || !inspectionUI.IsOpen);
+    public InteractableType InteractionType => interactionType;
 
     private void Awake()
     {

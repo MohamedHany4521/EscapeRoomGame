@@ -43,9 +43,13 @@ public class KeyLockedDoor : MonoBehaviour, IInteractable
     private bool isOpening = false;
     private Quaternion closedLocalRotation;
 
+    [Header("Interaction Type")]
+    [SerializeField] private InteractableType interactionType = InteractableType.Hold;
+
     public bool IsLocked => isLocked;
     public bool IsOpen => isOpen;
     public bool IsInteractable => !isOpen && !isOpening && enabled && gameObject.activeInHierarchy;
+    public InteractableType InteractionType => interactionType;
 
     private void Awake()
     {

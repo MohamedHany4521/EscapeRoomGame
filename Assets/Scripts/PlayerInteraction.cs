@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
@@ -8,7 +7,14 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
     [SerializeField] private bool allowMouseClick = true;
 
+    [Header("Dynamic Cursor UI")]
+    [SerializeField] private GameObject normalCursor;
+    [SerializeField] private GameObject adjustCursor;
+    [SerializeField] private GameObject holdCursor;
+    [SerializeField] private GameObject examineCursor;
+
     private IInteractable currentInteractable;
+    private GameObject activeCursor;
 
     private void Awake()
     {
@@ -23,6 +29,8 @@ public class PlayerInteraction : MonoBehaviour
 
         if (playerCamera == null)
             Debug.LogError("PlayerInteraction: No player camera assigned or found.", this);
+
+        ShowCursor(null);
     }
 
     private void Update()
@@ -43,7 +51,8 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (playerCamera == null || !playerCamera.enabled)
         {
-            ClearCurrentInteractable();
+            SetCurrentInteractable(null);
+            ShowCursor(null);
             return;
         }
 
@@ -69,28 +78,73 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-        if (currentInteractable == detectedInteractable)
-            return;
-
-        ClearCurrentInteractable();
-
         if (detectedInteractable != null)
         {
-            currentInteractable = detectedInteractable;
-            currentInteractable.ShowOutline();
+            SetCurrentInteractable(detectedInteractable);
+            ShowCursor(detectedInteractable.InteractionType);
+        }
+        else
+        {
+            SetCurrentInteractable(null);
+            ShowCursor(null);
         }
     }
 
-    private void ClearCurrentInteractable()
+    private void SetCurrentInteractable(IInteractable target)
     {
+        if (ReferenceEquals(currentInteractable, target))
+            return;
+
         if (currentInteractable != null)
             currentInteractable.HideOutline();
 
-        currentInteractable = null;
+        currentInteractable = target;
+
+        if (currentInteractable != null)
+            currentInteractable.ShowOutline();
+    }
+
+    private void ShowCursor(InteractableType? type)
+    {
+        GameObject cursor = normalCursor;
+
+        if (type.HasValue)
+        {
+            switch (type.Value)
+            {
+                case InteractableType.Adjust:
+                    cursor = adjustCursor;
+                    break;
+
+                case InteractableType.Hold:
+                    cursor = holdCursor;
+                    break;
+
+                case InteractableType.Examine:
+                    cursor = examineCursor;
+                    break;
+
+                case InteractableType.Generic:
+                    cursor = normalCursor;
+                    break;
+            }
+        }
+
+        if (activeCursor == cursor)
+            return;
+
+        if (activeCursor != null)
+            activeCursor.SetActive(false);
+
+        activeCursor = cursor;
+
+        if (activeCursor != null)
+            activeCursor.SetActive(true);
     }
 
     private void OnDisable()
     {
-        ClearCurrentInteractable();
+        SetCurrentInteractable(null);
+        ShowCursor(null);
     }
 }

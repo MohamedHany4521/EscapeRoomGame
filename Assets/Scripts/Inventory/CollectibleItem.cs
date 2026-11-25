@@ -33,7 +33,11 @@ public class CollectibleItem : MonoBehaviour, IInteractable
     public Outline ItemOutline => outline;
     public bool IsCollected => isCollected;
 
+    [Header("Interaction Type")]
+    [SerializeField] private InteractableType interactionType = InteractableType.Hold;
+
     public bool IsInteractable => !isCollected && enabled && gameObject.activeInHierarchy;
+    public InteractableType InteractionType => interactionType;
 
     private void Awake()
     {
