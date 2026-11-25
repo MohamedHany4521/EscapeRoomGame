@@ -798,6 +798,10 @@ MonoBehaviour:
   adjustCursor: {fileID: 1326097570}
   holdCursor: {fileID: 1289597408}
   examineCursor: {fileID: 475833725}
+  cursorFadeInDuration: 0.34
+  cursorFadeOutDuration: 0.16
+  cursorPopStartScale: 0.55
+  cursorPopOvershoot: 1.12
 --- !u!1 &149396009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,6 +2505,7 @@ GameObject:
   - component: {fileID: 475833726}
   - component: {fileID: 475833728}
   - component: {fileID: 475833727}
+  - component: {fileID: 475833729}
   m_Layer: 5
   m_Name: Examine
   m_TagString: Untagged
@@ -2565,6 +2570,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475833725}
   m_CullTransparentMesh: 1
+--- !u!225 &475833729
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475833725}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &491933675 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4334270741464008606, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
@@ -3471,6 +3488,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb784dfba3220742a5d9c85da6c9cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LEDButton
+--- !u!4 &640036715 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1059477031263068678, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
+  m_PrefabInstance: {fileID: 6995959661436330004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &640036717 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9108157289658533237, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
@@ -3482,6 +3504,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb784dfba3220742a5d9c85da6c9cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LEDButton
+--- !u!4 &640036721 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7189665147315527497, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
+  m_PrefabInstance: {fileID: 6995959661436330004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &661837879
 GameObject:
   m_ObjectHideFlags: 0
@@ -5277,8 +5304,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 1
   interactionPrompt: Press E to Restart
-  ui_text: {fileID: 1437441083}
-  InteractionType: 0
+  promptUi: {fileID: 1437441083}
+  interactionType: 0
 --- !u!114 &961271501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6535,6 +6562,7 @@ GameObject:
   - component: {fileID: 1146462443}
   - component: {fileID: 1146462445}
   - component: {fileID: 1146462444}
+  - component: {fileID: 1146462446}
   m_Layer: 5
   m_Name: NormalCursor
   m_TagString: Untagged
@@ -6599,6 +6627,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146462442}
   m_CullTransparentMesh: 1
+--- !u!225 &1146462446
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146462442}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1153244227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6663,6 +6703,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5ee9d05b013fb7a41bbfe7395ac313b2, type: 3}
   m_PrefabInstance: {fileID: 1153244227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1180515570 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8474229043575396295, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
+  m_PrefabInstance: {fileID: 6995959661436330004}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1208237064
 GameObject:
@@ -6900,6 +6945,7 @@ GameObject:
   - component: {fileID: 1289597409}
   - component: {fileID: 1289597411}
   - component: {fileID: 1289597410}
+  - component: {fileID: 1289597412}
   m_Layer: 5
   m_Name: Hold
   m_TagString: Untagged
@@ -6964,6 +7010,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289597408}
   m_CullTransparentMesh: 1
+--- !u!225 &1289597412
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289597408}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1326097570
 GameObject:
   m_ObjectHideFlags: 0
@@ -6975,6 +7033,7 @@ GameObject:
   - component: {fileID: 1326097571}
   - component: {fileID: 1326097573}
   - component: {fileID: 1326097572}
+  - component: {fileID: 1326097574}
   m_Layer: 5
   m_Name: Adjust
   m_TagString: Untagged
@@ -7039,6 +7098,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326097570}
   m_CullTransparentMesh: 1
+--- !u!225 &1326097574
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326097570}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1332643511
 GameObject:
   m_ObjectHideFlags: 0
@@ -8751,6 +8822,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &1710679407 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4151434589837793990, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
+  m_PrefabInstance: {fileID: 6995959661436330004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1766768541
 GameObject:
   m_ObjectHideFlags: 0
@@ -9962,7 +10038,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1437441083}
     - target: {fileID: 1324535379331173082, guid: 329e2f9a8ee1c544497741cb6ce7f024, type: 3}
+      propertyPath: promptUi
+      value: 
+      objectReference: {fileID: 1437441083}
+    - target: {fileID: 1324535379331173082, guid: 329e2f9a8ee1c544497741cb6ce7f024, type: 3}
       propertyPath: InteractionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324535379331173082, guid: 329e2f9a8ee1c544497741cb6ce7f024, type: 3}
+      propertyPath: interactionType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1324535379331173082, guid: 329e2f9a8ee1c544497741cb6ce7f024, type: 3}
@@ -10018,7 +10102,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1437441083}
     - target: {fileID: 5409364517190899199, guid: 329e2f9a8ee1c544497741cb6ce7f024, type: 3}
+      propertyPath: promptUi
+      value: 
+      objectReference: {fileID: 1437441083}
+    - target: {fileID: 5409364517190899199, guid: 329e2f9a8ee1c544497741cb6ce7f024, type: 3}
       propertyPath: InteractionType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409364517190899199, guid: 329e2f9a8ee1c544497741cb6ce7f024, type: 3}
+      propertyPath: interactionType
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5409364517190899199, guid: 329e2f9a8ee1c544497741cb6ce7f024, type: 3}
@@ -10038,7 +10130,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1437441083}
     - target: {fileID: 6213656607507349539, guid: 329e2f9a8ee1c544497741cb6ce7f024, type: 3}
+      propertyPath: promptUi
+      value: 
+      objectReference: {fileID: 1437441083}
+    - target: {fileID: 6213656607507349539, guid: 329e2f9a8ee1c544497741cb6ce7f024, type: 3}
       propertyPath: InteractionType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213656607507349539, guid: 329e2f9a8ee1c544497741cb6ce7f024, type: 3}
+      propertyPath: interactionType
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6213656607507349539, guid: 329e2f9a8ee1c544497741cb6ce7f024, type: 3}
@@ -10091,8 +10191,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1420297942186893781, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
+      propertyPath: buttonTop
+      value: 
+      objectReference: {fileID: 640036715}
     - target: {fileID: 2912163830384703456, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
       propertyPath: ui_text
+      value: 
+      objectReference: {fileID: 1437441083}
+    - target: {fileID: 2912163830384703456, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
+      propertyPath: promptUi
       value: 
       objectReference: {fileID: 1437441083}
     - target: {fileID: 2912163830384703456, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
@@ -10104,19 +10212,39 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1437441083}
     - target: {fileID: 3088018487396178751, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
+      propertyPath: promptUi
+      value: 
+      objectReference: {fileID: 1437441083}
+    - target: {fileID: 3088018487396178751, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
       propertyPath: interactionPrompt
       value: Press E to Play
       objectReference: {fileID: 0}
+    - target: {fileID: 3163929270952704884, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
+      propertyPath: buttonTop
+      value: 
+      objectReference: {fileID: 1710679407}
     - target: {fileID: 4175178914221503677, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
       propertyPath: ui_text
+      value: 
+      objectReference: {fileID: 1437441083}
+    - target: {fileID: 4175178914221503677, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
+      propertyPath: promptUi
       value: 
       objectReference: {fileID: 1437441083}
     - target: {fileID: 4175178914221503677, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
       propertyPath: interactionPrompt
       value: Press E to Play
       objectReference: {fileID: 0}
+    - target: {fileID: 4334270741464008606, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
+      propertyPath: buttonTop
+      value: 
+      objectReference: {fileID: 1180515570}
     - target: {fileID: 5722789029771888048, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
       propertyPath: ui_text
+      value: 
+      objectReference: {fileID: 1437441083}
+    - target: {fileID: 5722789029771888048, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
+      propertyPath: promptUi
       value: 
       objectReference: {fileID: 1437441083}
     - target: {fileID: 5722789029771888048, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
@@ -10167,6 +10295,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 89.949
       objectReference: {fileID: 0}
+    - target: {fileID: 9108157289658533237, guid: 8b964162398aac64db46ec4ab7742b9a, type: 3}
+      propertyPath: buttonTop
+      value: 
+      objectReference: {fileID: 640036721}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

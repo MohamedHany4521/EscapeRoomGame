@@ -668,6 +668,14 @@ MonoBehaviour:
   playerReach: 3.5
   interactionKey: 101
   allowMouseClick: 1
+  normalCursor: {fileID: 1146462442}
+  adjustCursor: {fileID: 1326097570}
+  holdCursor: {fileID: 1289597408}
+  examineCursor: {fileID: 475833725}
+  cursorFadeInDuration: 0.35
+  cursorFadeOutDuration: 0.14
+  cursorPopStartScale: 0.55
+  cursorPopOvershoot: 1.12
 --- !u!1001 &157547889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -839,6 +847,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  interactionType: 3
 --- !u!4 &157547895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a1521550bf2cadd428278ca56db8256c, type: 3}
@@ -2037,6 +2046,7 @@ MonoBehaviour:
   itemTag: Document
   description: A classified document containing vital instructions.
   outline: {fileID: 335048466}
+  interactionType: 2
 --- !u!1 &435438473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,6 +2691,7 @@ GameObject:
   - component: {fileID: 475833726}
   - component: {fileID: 475833728}
   - component: {fileID: 475833727}
+  - component: {fileID: 475833729}
   m_Layer: 5
   m_Name: Examine
   m_TagString: Untagged
@@ -2745,6 +2756,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475833725}
   m_CullTransparentMesh: 1
+--- !u!225 &475833729
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475833725}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!4 &500788112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8885175114923881332, guid: a1521550bf2cadd428278ca56db8256c, type: 3}
@@ -6185,6 +6208,7 @@ MonoBehaviour:
   itemTag: Battery
   description: A high-capacity battery for electronic devices.
   outline: {fileID: 1129358514}
+  interactionType: 2
 --- !u!1 &1132504184
 GameObject:
   m_ObjectHideFlags: 0
@@ -6334,6 +6358,7 @@ MonoBehaviour:
   itemTag: Key
   description: A small brass key that might unlock a door.
   outline: {fileID: 1132504189}
+  interactionType: 2
 --- !u!1 &1146462442
 GameObject:
   m_ObjectHideFlags: 0
@@ -6345,6 +6370,7 @@ GameObject:
   - component: {fileID: 1146462443}
   - component: {fileID: 1146462445}
   - component: {fileID: 1146462444}
+  - component: {fileID: 1146462446}
   m_Layer: 5
   m_Name: NormalCursor
   m_TagString: Untagged
@@ -6409,6 +6435,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146462442}
   m_CullTransparentMesh: 1
+--- !u!225 &1146462446
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146462442}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1153244227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6934,6 +6972,7 @@ GameObject:
   - component: {fileID: 1289597409}
   - component: {fileID: 1289597411}
   - component: {fileID: 1289597410}
+  - component: {fileID: 1289597412}
   m_Layer: 5
   m_Name: Hold
   m_TagString: Untagged
@@ -6998,6 +7037,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289597408}
   m_CullTransparentMesh: 1
+--- !u!225 &1289597412
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289597408}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1326097570
 GameObject:
   m_ObjectHideFlags: 0
@@ -7009,6 +7060,7 @@ GameObject:
   - component: {fileID: 1326097571}
   - component: {fileID: 1326097573}
   - component: {fileID: 1326097572}
+  - component: {fileID: 1326097574}
   m_Layer: 5
   m_Name: Adjust
   m_TagString: Untagged
@@ -7073,6 +7125,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326097570}
   m_CullTransparentMesh: 1
+--- !u!225 &1326097574
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326097570}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1332643511
 GameObject:
   m_ObjectHideFlags: 0
@@ -7445,6 +7509,7 @@ MonoBehaviour:
   openDuration: 1.2
   isLocked: 1
   isOpen: 0
+  interactionType: 2
 --- !u!1 &1350748630
 GameObject:
   m_ObjectHideFlags: 0
@@ -10354,6 +10419,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
+  interactionType: 1
 --- !u!1 &272333344
 GameObject:
   m_ObjectHideFlags: 0
@@ -10500,6 +10566,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
+  interactionType: 1
 --- !u!1 &563778464 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5383593736642503035, guid: e66a639c1aeda1c4486285b313b403db, type: 3}
@@ -10544,6 +10611,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
+  interactionType: 1
 --- !u!1 &589057196 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -488021787638296549, guid: e66a639c1aeda1c4486285b313b403db, type: 3}
@@ -10588,6 +10656,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
+  interactionType: 1
 --- !u!1 &639681211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2363788352541951579, guid: e66a639c1aeda1c4486285b313b403db, type: 3}
@@ -10611,6 +10680,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
+  interactionType: 1
 --- !u!65 &639681216
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10676,6 +10746,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
+  interactionType: 1
 --- !u!1 &1199802008 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4269138871983400511, guid: e66a639c1aeda1c4486285b313b403db, type: 3}
@@ -10720,6 +10791,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
+  interactionType: 1
 --- !u!1 &1327266212 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4967729778511558924, guid: e66a639c1aeda1c4486285b313b403db, type: 3}
@@ -10764,6 +10836,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
+  interactionType: 1
 --- !u!114 &1373364759 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2684508740913028420, guid: ecb41aac61c3be5479e2ef677bb58be5, type: 3}
@@ -10948,6 +11021,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
+  interactionType: 1
 --- !u!1 &1748580412 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -193741677669210067, guid: e66a639c1aeda1c4486285b313b403db, type: 3}
@@ -10992,6 +11066,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
+  interactionType: 1
 --- !u!1 &1750000000
 GameObject:
   m_ObjectHideFlags: 0
@@ -11091,6 +11166,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
+  interactionType: 1
 --- !u!1 &1820188464 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e66a639c1aeda1c4486285b313b403db, type: 3}
@@ -11204,6 +11280,7 @@ MonoBehaviour:
   onFocusExit:
     m_PersistentCalls:
       m_Calls: []
+  interactionType: 3
 --- !u!1 &1941357938
 GameObject:
   m_ObjectHideFlags: 0
@@ -11221,7 +11298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1941357939
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11323,6 +11400,7 @@ MonoBehaviour:
   outline: {fileID: 0}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
+  interactionType: 1
 --- !u!1 &1950000030
 GameObject:
   m_ObjectHideFlags: 0
@@ -11921,6 +11999,7 @@ MonoBehaviour:
   requiredDocumentID: Document_01
   inspectionUI: {fileID: 1950000034}
   outline: {fileID: 1950000050}
+  interactionType: 3
 --- !u!1 &1950000052
 GameObject:
   m_ObjectHideFlags: 0
