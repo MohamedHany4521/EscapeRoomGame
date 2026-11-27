@@ -56,20 +56,27 @@ public class KeyLockedDoor : MonoBehaviour, IInteractable
         // 1. Locate door panel child if not explicitly assigned
         if (doorPanel == null)
         {
-            Transform found = transform.Find("SM_Door_01");
-            if (found == null)
+            if (doorPanelCollider != null)
             {
-                foreach (Transform child in GetComponentsInChildren<Transform>(true))
+                doorPanel = doorPanelCollider.transform;
+            }
+            else
+            {
+                Transform found = transform.Find("SM_Door_01");
+                if (found == null)
                 {
-                    if (child != transform && child.name.Equals("SM_Door_01", System.StringComparison.OrdinalIgnoreCase))
+                    foreach (Transform child in GetComponentsInChildren<Transform>(true))
                     {
-                        found = child;
-                        break;
+                        if (child != transform && (child.name.Equals("SM_Door_01", System.StringComparison.OrdinalIgnoreCase) || child.name.Contains("Door_01")))
+                        {
+                            found = child;
+                            break;
+                        }
                     }
                 }
-            }
 
-            doorPanel = found != null ? found : transform;
+                doorPanel = found != null ? found : transform;
+            }
         }
 
         // 2. Cache closed rotation
@@ -85,9 +92,26 @@ public class KeyLockedDoor : MonoBehaviour, IInteractable
             if (doorPanelCollider == null)
             {
                 doorPanelCollider = doorPanel.gameObject.AddComponent<BoxCollider>();
-                doorPanelCollider.center = new Vector3(-0.324f, 0f, 0.003f);
-                doorPanelCollider.size = new Vector3(0.66f, 0.20f, 1.47f);
+
+                // Account for potential 100x model import scale
+                float scaleX = Mathf.Abs(doorPanel.lossyScale.x);
+                if (scaleX > 10f)
+                {
+                    doorPanelCollider.center = new Vector3(-0.00324f, 0f, 0.00003f);
+                    doorPanelCollider.size = new Vector3(0.0066f, 0.002f, 0.0147f);
+                }
+                else
+                {
+                    doorPanelCollider.center = new Vector3(-0.324f, 0f, 0.003f);
+                    doorPanelCollider.size = new Vector3(0.66f, 0.20f, 1.47f);
+                }
             }
+        }
+
+        if (doorPanelCollider != null)
+        {
+            doorPanelCollider.isTrigger = false;
+            doorPanelCollider.enabled = !isOpen;
         }
 
         // 4. Configure/ensure frame MeshCollider (do not automatically add one)

@@ -10,6 +10,12 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private List<InventoryItem> items = new List<InventoryItem>();
 
     /// <summary>
+    /// Event triggered whenever an item is added to or removed from the inventory.
+    /// Listeners (such as InventoryUI) can subscribe to automatically refresh their view.
+    /// </summary>
+    public event Action OnInventoryChanged;
+
+    /// <summary>
     /// Adds an item to the inventory. Rejects null items, empty item IDs, and duplicates.
     /// </summary>
     public bool AddItem(InventoryItem item)
@@ -34,6 +40,7 @@ public class PlayerInventory : MonoBehaviour
 
         items.Add(item);
         Debug.Log($"PlayerInventory: Added '{item.DisplayName}' ({item.ItemID}). Total items: {items.Count}");
+        NotifyInventoryChanged();
         return true;
     }
 
@@ -74,7 +81,20 @@ public class PlayerInventory : MonoBehaviour
         InventoryItem removed = items[index];
         items.RemoveAt(index);
         Debug.Log($"PlayerInventory: Removed '{removed.DisplayName}' ({removed.ItemID}). Total items: {items.Count}");
+        NotifyInventoryChanged();
         return true;
+    }
+
+    private void NotifyInventoryChanged()
+    {
+        try
+        {
+            OnInventoryChanged?.Invoke();
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"PlayerInventory: Exception in OnInventoryChanged listener: {ex.Message}", this);
+        }
     }
 
     /// <summary>

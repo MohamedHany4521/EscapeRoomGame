@@ -31,6 +31,13 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Awake()
     {
+        PlayerInteraction[] instances = GetComponents<PlayerInteraction>();
+        if (instances.Length > 1 && instances[0] != this)
+        {
+            enabled = false;
+            return;
+        }
+
         if (playerCamera == null)
             playerCamera = GetComponentInChildren<Camera>();
 
@@ -42,6 +49,37 @@ public class PlayerInteraction : MonoBehaviour
 
         if (playerCamera == null)
             Debug.LogError("PlayerInteraction: No player camera assigned or found.", this);
+
+        if (normalCursor == null || adjustCursor == null || holdCursor == null || examineCursor == null)
+        {
+            GameObject uiRoot = GameObject.Find("UI");
+            if (uiRoot != null)
+            {
+                if (normalCursor == null)
+                {
+                    Transform t = uiRoot.transform.Find("NormalCursor");
+                    if (t != null) normalCursor = t.gameObject;
+                }
+
+                if (adjustCursor == null)
+                {
+                    Transform t = uiRoot.transform.Find("Adjust");
+                    if (t != null) adjustCursor = t.gameObject;
+                }
+
+                if (holdCursor == null)
+                {
+                    Transform t = uiRoot.transform.Find("Hold");
+                    if (t != null) holdCursor = t.gameObject;
+                }
+
+                if (examineCursor == null)
+                {
+                    Transform t = uiRoot.transform.Find("Examine");
+                    if (t != null) examineCursor = t.gameObject;
+                }
+            }
+        }
 
         cursors = new[]
         {

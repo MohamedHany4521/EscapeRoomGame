@@ -20,6 +20,9 @@ public class CollectibleItem : MonoBehaviour, IInteractable
     [TextArea(2, 4)]
     [SerializeField] private string description;
 
+    [Tooltip("Optional icon displayed in the Inventory UI.")]
+    [SerializeField] private Sprite icon;
+
     [Header("Visual Feedback")]
     [Tooltip("Outline component used for highlighting when looked at.")]
     [SerializeField] private Outline outline;
@@ -30,6 +33,7 @@ public class CollectibleItem : MonoBehaviour, IInteractable
     public string DisplayName => displayName;
     public string ItemTag => itemTag;
     public string Description => description;
+    public Sprite Icon => icon;
     public Outline ItemOutline => outline;
     public bool IsCollected => isCollected;
 
@@ -101,7 +105,7 @@ public class CollectibleItem : MonoBehaviour, IInteractable
             return;
         }
 
-        InventoryItem item = new InventoryItem(itemID, displayName, itemTag, description);
+        InventoryItem item = new InventoryItem(itemID, displayName, itemTag, description, icon);
         bool added = inventory.AddItem(item);
 
         if (added)
