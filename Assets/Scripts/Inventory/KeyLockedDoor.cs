@@ -2,22 +2,28 @@ using System.Collections;
 using UnityEngine;
 
 /// <summary>
-/// Controls a key-locked door in the escape room.
+/// Reusable, configurable door controller for the escape room.
 /// Implements IInteractable for interaction via PlayerInteraction raycast.
-/// Requires Key_Door1 in PlayerInventory to unlock and swing open.
-/// Only animates the movable door panel child (SM_Door_01), keeping the frame stationary.
+/// Supports optional key requirement, key consumption, reversible open/close,
+/// on-screen locked feedback, independent door instances, and scale-safe collider handling.
 /// </summary>
 public class KeyLockedDoor : MonoBehaviour, IInteractable
 {
     [Header("Key Configuration")]
+    [Tooltip("Whether this door requires a key to open. If false, opens without a key.")]
+    [SerializeField] private bool requiresKey = true;
+
     [Tooltip("The unique ItemID required in PlayerInventory to unlock this door.")]
     [SerializeField] private string requiredKeyID = "Key_Door1";
 
+    [Tooltip("If true, removes the key from inventory upon unlocking. If false, player keeps key.")]
+    [SerializeField] private bool consumeKeyOnUnlock = false;
+
     [Header("Door References")]
-    [Tooltip("The movable door panel child Transform (SM_Door_01). Frame remains stationary.")]
+    [Tooltip("The movable door panel child Transform (e.g. SM_Door_01). Frame remains stationary.")]
     [SerializeField] private Transform doorPanel;
 
-    [Tooltip("The BoxCollider on the door panel that blocks passage when closed and moves when open.")]
+    [Tooltip("The BoxCollider on the door panel that blocks passage when closed and clears when open.")]
     [SerializeField] private BoxCollider doorPanelCollider;
 
     [Tooltip("The static MeshCollider on the door frame.")]
@@ -27,28 +33,38 @@ public class KeyLockedDoor : MonoBehaviour, IInteractable
     [SerializeField] private Outline outline;
 
     [Header("Animation Settings")]
-    [Tooltip("Local axis of rotation around the panel hinge pivot. (0,0,1) corresponds to World Up.")]
+    [Tooltip("Local axis of rotation around the panel hinge pivot. (0,0,1) corresponds to World Up for FBX doors.")]
     [SerializeField] private Vector3 rotationAxis = Vector3.forward;
 
     [Tooltip("Angle in degrees to swing the door open.")]
     [SerializeField] private float openAngle = 90f;
 
-    [Tooltip("Duration in seconds for the opening animation.")]
+    [Tooltip("Duration in seconds for the opening/closing animation.")]
     [SerializeField] private float openDuration = 1.2f;
 
-    [Header("State")]
-    [SerializeField] private bool isLocked = true;
-    [SerializeField] private bool isOpen = false;
+    [Tooltip("Whether the player can interact with an open door to close it.")]
+    [SerializeField] private bool canBeClosed = true;
 
-    private bool isOpening = false;
-    private Quaternion closedLocalRotation;
+    [Header("State")]
+    [Tooltip("Current locked state of the door.")]
+    [SerializeField] private bool isLocked = true;
+
+    [Tooltip("Current open state of the door.")]
+    [SerializeField] private bool isOpen = false;
 
     [Header("Interaction Type")]
     [SerializeField] private InteractableType interactionType = InteractableType.Hold;
 
+    private bool isAnimating = false;
+    private Quaternion closedLocalRotation;
+
+    public bool RequiresKey => requiresKey;
+    public string RequiredKeyID => requiredKeyID;
+    public bool ConsumeKeyOnUnlock => consumeKeyOnUnlock;
     public bool IsLocked => isLocked;
     public bool IsOpen => isOpen;
-    public bool IsInteractable => !isOpen && !isOpening && enabled && gameObject.activeInHierarchy;
+    public bool CanBeClosed => canBeClosed;
+    public bool IsInteractable => !isAnimating && (canBeClosed || !isOpen) && enabled && gameObject.activeInHierarchy;
     public InteractableType InteractionType => interactionType;
 
     private void Awake()
@@ -62,24 +78,36 @@ public class KeyLockedDoor : MonoBehaviour, IInteractable
             }
             else
             {
-                Transform found = transform.Find("SM_Door_01");
-                if (found == null)
+                // Search for any movable door leaf child (e.g. SM_Door_01, SM_Door_02, DoorPanel)
+                foreach (Transform child in GetComponentsInChildren<Transform>(true))
+                {
+                    if (child != transform && (child.name.Contains("Door_") || child.name.Contains("DoorPanel") || child.name.Contains("DoorLeaf")))
+                    {
+                        doorPanel = child;
+                        break;
+                    }
+                }
+
+                if (doorPanel == null)
                 {
                     foreach (Transform child in GetComponentsInChildren<Transform>(true))
                     {
-                        if (child != transform && (child.name.Equals("SM_Door_01", System.StringComparison.OrdinalIgnoreCase) || child.name.Contains("Door_01")))
+                        if (child != transform && child.name.Contains("Door") && !child.name.Contains("Frame"))
                         {
-                            found = child;
+                            doorPanel = child;
                             break;
                         }
                     }
                 }
 
-                doorPanel = found != null ? found : transform;
+                if (doorPanel == null)
+                {
+                    doorPanel = transform;
+                }
             }
         }
 
-        // 2. Cache closed rotation
+        // 2. Cache closed rotation exactly once
         if (doorPanel != null)
         {
             closedLocalRotation = doorPanel.localRotation;
@@ -93,7 +121,7 @@ public class KeyLockedDoor : MonoBehaviour, IInteractable
             {
                 doorPanelCollider = doorPanel.gameObject.AddComponent<BoxCollider>();
 
-                // Account for potential 100x model import scale
+                // Account for potential 100x model import scale without breaking bounds
                 float scaleX = Mathf.Abs(doorPanel.lossyScale.x);
                 if (scaleX > 10f)
                 {
@@ -170,37 +198,92 @@ public class KeyLockedDoor : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (!IsInteractable || isOpening || isOpen)
+        if (!IsInteractable || isAnimating)
         {
             return;
         }
 
-        PlayerInventory inventory = FindFirstObjectByType<PlayerInventory>();
-        if (inventory == null)
+        if (!isOpen)
         {
-            Debug.LogWarning($"KeyLockedDoor on '{gameObject.name}': No PlayerInventory found in scene. Cannot verify key '{requiredKeyID}'.", this);
-            return;
-        }
+            // Door is currently closed
+            if (isLocked)
+            {
+                if (!requiresKey)
+                {
+                    // Door does not require a key; unlocks and opens directly!
+                    isLocked = false;
+                    Debug.Log($"KeyLockedDoor on '{gameObject.name}': Door does not require a key. Unlocking and opening.", this);
+                    StartCoroutine(AnimateDoor(true));
+                    return;
+                }
 
-        if (inventory.HasItem(requiredKeyID))
-        {
-            Debug.Log($"KeyLockedDoor on '{gameObject.name}': Key '{requiredKeyID}' verified in inventory. Unlocking and opening door.", this);
-            isLocked = false;
-            StartCoroutine(OpenDoorRoutine());
+                if (string.IsNullOrWhiteSpace(requiredKeyID))
+                {
+                    Debug.LogWarning($"KeyLockedDoor on '{gameObject.name}': Door requires a key, but 'requiredKeyID' is empty. Door remains locked.", this);
+                    ShowFeedback("Door is locked.");
+                    return;
+                }
+
+                PlayerInventory inventory = FindFirstObjectByType<PlayerInventory>();
+                if (inventory == null)
+                {
+                    Debug.LogWarning($"KeyLockedDoor on '{gameObject.name}': No PlayerInventory found in scene. Cannot verify key '{requiredKeyID}'.", this);
+                    ShowFeedback($"Requires {requiredKeyID}");
+                    return;
+                }
+
+                if (inventory.HasItem(requiredKeyID))
+                {
+                    InventoryItem item = inventory.GetItem(requiredKeyID);
+                    string keyName = item != null && !string.IsNullOrWhiteSpace(item.DisplayName) ? item.DisplayName : requiredKeyID;
+
+                    if (consumeKeyOnUnlock)
+                    {
+                        inventory.RemoveItem(requiredKeyID);
+                        Debug.Log($"KeyLockedDoor on '{gameObject.name}': Key '{requiredKeyID}' consumed on unlock.", this);
+                    }
+
+                    isLocked = false;
+                    Debug.Log($"KeyLockedDoor on '{gameObject.name}': Key '{requiredKeyID}' verified in inventory. Unlocking and opening door.", this);
+                    StartCoroutine(AnimateDoor(true));
+                }
+                else
+                {
+                    Debug.LogWarning($"KeyLockedDoor on '{gameObject.name}': Door is locked. Requires key '{requiredKeyID}'.", this);
+                    ShowFeedback($"Requires {requiredKeyID}");
+                }
+            }
+            else
+            {
+                // Door is closed but already unlocked -> open smoothly
+                StartCoroutine(AnimateDoor(true));
+            }
         }
         else
         {
-            Debug.LogWarning($"KeyLockedDoor on '{gameObject.name}': Door is locked. Requires key '{requiredKeyID}'.", this);
+            // Door is open -> close if allowed
+            if (canBeClosed)
+            {
+                StartCoroutine(AnimateDoor(false));
+            }
         }
     }
 
-    private IEnumerator OpenDoorRoutine()
+    private IEnumerator AnimateDoor(bool opening)
     {
-        isOpening = true;
+        isAnimating = true;
         HideOutline();
 
         Quaternion startRot = doorPanel.localRotation;
-        Quaternion targetRot = closedLocalRotation * Quaternion.AngleAxis(openAngle, rotationAxis);
+        Quaternion targetRot = opening
+            ? closedLocalRotation * Quaternion.AngleAxis(openAngle, rotationAxis)
+            : closedLocalRotation;
+
+        // If closing, ensure collider stays disabled during transit so it does not snag or push player
+        if (!opening && doorPanelCollider != null)
+        {
+            doorPanelCollider.enabled = false;
+        }
 
         float elapsed = 0f;
         while (elapsed < openDuration)
@@ -213,10 +296,12 @@ public class KeyLockedDoor : MonoBehaviour, IInteractable
         }
 
         doorPanel.localRotation = targetRot;
-        isOpening = false;
-        isOpen = true;
+        isAnimating = false;
+        isOpen = opening;
 
-        // Disable panel collider after opening so the player can pass freely
+        // Collider handling after animation:
+        // When open -> disable panel collider so the player can pass freely
+        // When closed -> enable solid BoxCollider to block passage
         if (doorPanelCollider == null && doorPanel != null)
         {
             doorPanelCollider = doorPanel.GetComponent<BoxCollider>();
@@ -224,10 +309,32 @@ public class KeyLockedDoor : MonoBehaviour, IInteractable
 
         if (doorPanelCollider != null)
         {
-            doorPanelCollider.enabled = false;
+            doorPanelCollider.enabled = !isOpen;
+            doorPanelCollider.isTrigger = false;
         }
 
-        Debug.Log($"KeyLockedDoor on '{gameObject.name}': Door successfully opened.", this);
+        Debug.Log($"KeyLockedDoor on '{gameObject.name}': Door successfully {(opening ? "opened" : "closed")}.", this);
+    }
+
+    public void UnlockAndOpen()
+    {
+        if (isOpen || isAnimating) return;
+        isLocked = false;
+        StartCoroutine(AnimateDoor(true));
+    }
+
+    public void Unlock()
+    {
+        isLocked = false;
+    }
+
+    private void ShowFeedback(string message)
+    {
+        UI ui = UI.Instance != null ? UI.Instance : FindFirstObjectByType<UI>();
+        if (ui != null)
+        {
+            ui.ShowInteractionFeedback(message);
+        }
     }
 
     private void OnDisable()
